@@ -1,5 +1,65 @@
 # SatsFlow Implementation Plan (Phased)
 
+## Progress Snapshot (As of 2026-03-11)
+
+### Completed So Far
+- Pitch materials reviewed and compressed (`pitch-deck-compressed.md`).
+- Docs-grounded build roadmap created (`implementation-plan-phases.md`) and executed through core contract phases.
+- Clarinet workspace scaffolded and configured with sBTC requirement.
+- Core stream contract implemented and hardened across lifecycle flows.
+- Multi-token support added: sBTC + native STX.
+- Contract versions deployed on testnet due immutable contract naming (`v2`, then `v3`).
+- Final active deployment validated: `ST2QFJV445B22TXQXYW0M3EDEYSDGDVV5N15PE2XN.satsflow-streams-v3`.
+- Local test suite updated and passing (`20/20`).
+- Testnet smoke interface checks passing for `v3`.
+- Real on-chain flow successfully executed on testnet (`create -> top-up -> cancel`) with successful tx confirmations.
+- Frontend integrated with latest contract workflow and multi-recipient creation UX.
+- Stream dashboards and detail pages updated for v5 data model (separate recipient maps/state).
+- Recipient detail page now shows recipient-specific metrics only (rate, withdrawn, allocation, remaining, claimable).
+- Claimable amount polling fixed to refresh live without manual reload.
+- Withdraw/cancel transaction post-condition mode fixed to avoid false wallet aborts.
+- Active app contract target updated to `ST2QFJV445B22TXQXYW0M3EDEYSDGDVV5N15PE2XN.satsflow-streams-v5`.
+
+### Live Testnet Evidence
+- `create-stream` success: `(ok u1)`
+- `top-up-stream` success: `(ok u3000)`
+- `cancel-stream` success: `(ok u3000)`
+- Resulting stream state for id `u1`: `is_active = false` (expected because it was canceled in the same flow).
+
+## Current Contract Inventory (`satsflow-streams-v5`)
+
+### Supported Tokens
+- sBTC token contract: `SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token`
+- Native STX token principal: `SP000000000000000000002Q6VF78`
+
+### Public Functions
+- `create-stream(recipient-entries, token, deposit, name, description)`
+- `withdraw(stream-id)`
+- `top-up-stream(stream-id, amount)`
+- `cancel-stream(stream-id)`
+
+### Read-Only Functions
+- `get-stream(stream-id)`
+- `get-stream-recipients(stream-id)`
+- `get-stream-recipient(stream-id, recipient)`
+- `get-claimable(stream-id, recipient)`
+- `get-sender-streams(sender)`
+- `get-recipient-streams(recipient)`
+
+### Storage and Indexing
+- `next_stream_id` counter.
+- `streams` map for full stream state.
+- `sender_stream_index` and `recipient_stream_index` maps with capped list size (`200`).
+
+### Core Safety and Behavior
+- Strict authorization checks:
+  - sender-only: `top-up-stream`, `cancel-stream`
+  - recipient-only: `withdraw`
+- Input validation for token, deposit/rate/top-up amounts, and recipient principal checks.
+- Claimable amount is time-based and capped by remaining deposit (no over-withdrawal).
+- Stream auto-inactivates when deposit is exhausted; explicit inactivation on cancel.
+- Explicit error-code model for invalid input, auth failures, transfer failures, and missing/inactive streams.
+
 ## Goal
 Build and ship an MVP of SatsFlow on Stacks with sBTC-powered continuous payout streams, then harden and prepare for demo/testnet launch.
 
@@ -29,6 +89,8 @@ Create a reliable local development environment for Clarity contracts and fronte
 ---
 
 ## Phase 1 - Core Stream Contract (MVP Logic)
+Status: Completed on 2026-03-11
+
 ### Objective
 Implement minimal, production-shaped stream logic for single sender and single recipient streams.
 
@@ -60,6 +122,8 @@ Implement minimal, production-shaped stream logic for single sender and single r
 ---
 
 ## Phase 2 - Security and Invariant Hardening
+Status: Completed on 2026-03-11
+
 ### Objective
 Reduce exploit and misuse risk before frontend integration.
 
@@ -88,6 +152,8 @@ Reduce exploit and misuse risk before frontend integration.
 ---
 
 ## Phase 3 - Test Suite and Quality Gates
+Status: Completed on 2026-03-11
+
 ### Objective
 Build confidence with deterministic unit and integration-like tests.
 
@@ -111,6 +177,8 @@ Build confidence with deterministic unit and integration-like tests.
 ---
 
 ## Phase 4 - Frontend MVP Integration
+Status: In Progress (major flows implemented on 2026-03-11)
+
 ### Objective
 Ship usable interfaces for sender and recipient workflows.
 
@@ -137,9 +205,19 @@ Ship usable interfaces for sender and recipient workflows.
 - User can complete full stream lifecycle from UI with connected wallet.
 - UI reflects on-chain state correctly after transactions confirm.
 
+### Phase 4 Progress Notes (2026-03-11)
+- Wallet connect/disconnect and account balance display wired.
+- Stream create flow supports multiple recipients with individual rates.
+- Sender dashboard and stream detail views working against v5 structures.
+- Recipient dashboard and recipient-only stream detail view implemented.
+- Live claimable polling and transaction result/txid feedback implemented.
+- Remaining: add broader UX polish (empty/error states and loading skeletons) and run full multi-wallet acceptance pass.
+
 ---
 
 ## Phase 5 - Transaction Safety (Post-Conditions)
+Status: In Progress
+
 ### Objective
 Protect users from unexpected asset transfers in contract calls.
 
@@ -156,9 +234,16 @@ Protect users from unexpected asset transfers in contract calls.
 - Transactions fail safely if transfer behavior exceeds declared limits.
 - All wallet prompts clearly display expected asset movement.
 
+### Phase 5 Progress Notes (2026-03-11)
+- Spend-side post-conditions added for create/top-up.
+- Withdraw/cancel adjusted to avoid false-negative wallet aborts under deny mode.
+- Remaining: re-introduce stricter receive/refund-aware post-conditions where feasible and validate prompts across supported wallets.
+
 ---
 
 ## Phase 6 - Testnet Deployment and Verification
+Status: Completed on 2026-03-11 (Contract Deployment and Verification)
+
 ### Objective
 Deploy and verify a live testnet version for demo and judging.
 
@@ -182,6 +267,8 @@ Deploy and verify a live testnet version for demo and judging.
 ---
 
 ## Phase 7 - Demo Readiness and Launch Packet
+Status: In Progress
+
 ### Objective
 Prepare final hackathon-ready package and reduce demo risk.
 
@@ -204,7 +291,7 @@ Prepare final hackathon-ready package and reduce demo risk.
 ---
 
 ## Cross-Phase Standards
-- Keep scope to MVP (single sender -> single recipient streams).
+- Keep scope to MVP (single sender -> multi-recipient streams with per-recipient rates).
 - Prefer explicit errors over silent failures.
 - Maintain deterministic integer accounting.
 - Keep contract interfaces stable once frontend integration starts.
@@ -213,4 +300,8 @@ Prepare final hackathon-ready package and reduce demo risk.
 ---
 
 ## Immediate Next Step
-Start with **Phase 0**, then open a Phase 1 contract task list with exact function signatures and error codes before coding.
+Run a focused **Phase 4/5 closeout** pass:
+1. Execute end-to-end multi-wallet test matrix (`create -> receive view -> withdraw -> sender top-up -> cancel`) and capture tx links.
+2. Add final UX hardening for loading/error/empty states on all dashboards and detail pages.
+3. Validate post-condition behavior for create/top-up/withdraw/cancel on target wallets and document the final policy.
+4. Update demo script + proof pack with v5 contract id, screenshots, and known constraints.

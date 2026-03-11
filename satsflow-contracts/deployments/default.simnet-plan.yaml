@@ -81,8 +81,8 @@ plan:
   - id: 1
     transactions:
     - transaction-type: emulated-contract-publish
-      contract-name: satsflow-streams
+      contract-name: satsflow-streams-v5
       emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
-      path: contracts/satsflow-streams.clar
+      path: contracts/satsflow-streams-v5.clar
       clarity-version: 4
     epoch: '3.3'
