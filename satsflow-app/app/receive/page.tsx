@@ -83,9 +83,7 @@ export default function ReceivePage() {
           <p className="text-neutral-500 text-sm max-w-xs">
             Ask a sender to create a stream and share the recipient link with you.
           </p>
-          <Link href="/demo" className="text-sm text-orange-400 hover:text-orange-300 underline">
-            See a demo stream →
-          </Link>
+
         </div>
       )}
 

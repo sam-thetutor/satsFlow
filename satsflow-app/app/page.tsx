@@ -15,7 +15,6 @@ function HeroLiveDemo() {
   const [elapsed, setElapsed] = useState(0);
   const startRef = useRef(Date.now());
 
-  // 1 "demo block" = 3 real seconds
   useEffect(() => {
     const t = setInterval(
       () => setElapsed((Date.now() - startRef.current) / 3000),
@@ -30,50 +29,63 @@ function HeroLiveDemo() {
   const drainPct     = (totalAccrued / DEPOSIT) * 100;
 
   return (
-    <div className="w-full max-w-sm rounded-2xl border border-neutral-800 bg-neutral-900 p-5 text-left shadow-xl">
-      {/* Header */}
-      <div className="flex items-center justify-between mb-4">
+    <div className="w-full max-w-md rounded-2xl border border-neutral-700/60 bg-neutral-900/80 backdrop-blur p-6 shadow-2xl text-left">
+      {/* Card header */}
+      <div className="flex items-center justify-between mb-5">
         <div>
-          <p className="text-xs text-neutral-500 uppercase tracking-widest mb-0.5">Live stream</p>
-          <p className="text-sm font-semibold">Contributor Payroll</p>
+          <p className="text-[10px] text-neutral-500 uppercase tracking-widest mb-0.5 font-semibold">Live stream simulation</p>
+          <p className="text-sm font-bold text-white">Contributor Payroll</p>
         </div>
-        <span className="flex items-center gap-1.5 text-xs text-green-400 bg-green-900/30 border border-green-800/50 rounded-full px-2.5 py-1">
+        <span className="flex items-center gap-1.5 text-xs text-green-400 bg-green-900/30 border border-green-800/50 rounded-full px-3 py-1 font-medium">
           <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse inline-block" />
           Active
         </span>
       </div>
 
       {/* Drain bar */}
-      <div className="mb-4">
-        <div className="flex justify-between text-xs text-neutral-500 mb-1.5">
-          <span>Balance draining</span>
-          <span className="font-mono text-orange-300">{remaining.toFixed(6)} sBTC</span>
+      <div className="mb-5">
+        <div className="flex justify-between text-xs mb-2">
+          <span className="text-neutral-500">Balance draining in real time</span>
+          <span className="font-mono text-orange-300 font-semibold">{remaining.toFixed(6)} sBTC</span>
         </div>
-        <div className="h-1.5 rounded-full bg-neutral-800 overflow-hidden">
+        <div className="h-2 rounded-full bg-neutral-800 overflow-hidden">
           <div
-            className="h-full rounded-full bg-orange-500 transition-all duration-100"
-            style={{ width: `${(100 - drainPct).toFixed(3)}%` }}
+            className="h-full rounded-full bg-gradient-to-r from-orange-600 to-orange-400 transition-all duration-100"
+            style={{ width: `${Math.max(0, 100 - drainPct).toFixed(3)}%` }}
           />
+        </div>
+        <div className="flex justify-between text-[10px] text-neutral-700 mt-1">
+          <span>0 sBTC</span>
+          <span>{DEPOSIT} sBTC</span>
         </div>
       </div>
 
-      {/* Recipients live */}
-      <div className="flex flex-col gap-0 border-t border-neutral-800 pt-3">
+      {/* Recipients */}
+      <div className="rounded-xl bg-neutral-800/50 divide-y divide-neutral-800 overflow-hidden">
         {LIVE_RECIPIENTS.map((r) => {
           const accrued = r.rate * elapsed;
           return (
-            <div key={r.label} className="flex items-center justify-between py-2 border-b border-neutral-800/60 last:border-0">
-              <span className="text-xs text-orange-400 font-medium">{r.label}</span>
+            <div key={r.label} className="flex items-center justify-between px-4 py-3">
+              <div className="flex items-center gap-2">
+                <span className="w-6 h-6 rounded-full bg-orange-900/50 border border-orange-800/50 flex items-center justify-center text-[10px] font-bold text-orange-400">
+                  {r.label[0].toUpperCase()}
+                </span>
+                <span className="text-xs text-orange-300 font-medium">{r.label}</span>
+              </div>
               <div className="text-right">
-                <div className="font-mono text-green-400 text-sm tabular-nums">
+                <div className="font-mono text-green-400 text-sm font-bold tabular-nums">
                   +{accrued.toFixed(8)}
                 </div>
-                <div className="text-xs text-neutral-600">sBTC accrued</div>
+                <div className="text-[10px] text-neutral-600">sBTC accrued</div>
               </div>
             </div>
           );
         })}
       </div>
+
+      <p className="text-[10px] text-neutral-700 mt-3 text-center">
+        Simulation · 1 demo block = 3 s · real Stacks blocks ≈ 10 min
+      </p>
     </div>
   );
 }
@@ -82,87 +94,83 @@ export default function Home() {
   const { connected, connect } = useWallet();
 
   return (
-    <div className="flex flex-col items-center text-center gap-10 pt-12">
+    <div className="flex flex-col items-center gap-16 pt-16 pb-16">
 
-      {/* Hero: text left, live demo right */}
-      <div className="flex flex-col lg:flex-row items-center gap-10 w-full max-w-5xl px-4">
+      {/* ── Hero ── two-column on lg+ */}
+      <div className="w-full max-w-6xl px-6 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
-        {/* Left: headline + CTAs */}
-        <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-4 flex-1">
-          <span className="text-xs font-semibold tracking-widest text-orange-400 uppercase">
-            Bitcoin-native payment streams on Stacks
-          </span>
-          <h1 className="text-4xl font-bold leading-tight">
-            Stream <span className="text-orange-400">sBTC</span> per block,{" "}
-            <br className="hidden sm:block" />
-            settle on Bitcoin
-          </h1>
-          <p className="text-neutral-400 text-base max-w-lg">
-            SatsFlow streams real Bitcoin (sBTC) continuously to multiple
-            recipients. No bridging, no wrapping — secured by Bitcoin
-            finality via Stacks.
-          </p>
-
-          <div className="flex flex-wrap justify-center lg:justify-start gap-2">
-            <span className="text-xs px-3 py-1 rounded-full bg-orange-900/40 text-orange-300 border border-orange-800/50">sBTC-first</span>
-            <span className="text-xs px-3 py-1 rounded-full bg-neutral-800 text-neutral-400 border border-neutral-700">Multi-recipient</span>
-            <span className="text-xs px-3 py-1 rounded-full bg-neutral-800 text-neutral-400 border border-neutral-700">Cancel any time</span>
-            <span className="text-xs px-3 py-1 rounded-full bg-neutral-800 text-neutral-400 border border-neutral-700">No bridges</span>
+        {/* Left: copy */}
+        <div className="flex-1 flex flex-col gap-5 items-start text-left">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-800/60 bg-orange-900/20 text-xs font-semibold text-orange-300 uppercase tracking-widest">
+            <span className="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse inline-block" />
+            Bitcoin-native · Powered by Stacks
           </div>
 
+          <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight tracking-tight">
+            Stream{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+              value
+            </span>
+            <br />
+            like water
+          </h1>
+
+          <p className="text-neutral-400 text-lg leading-relaxed max-w-md">
+            Pay contributors, teams, and services in real-time — every Bitcoin block,
+            automatically. No invoices, no delays, no trust required.
+          </p>
+
           {connected ? (
-            <div className="flex gap-3 flex-wrap justify-center lg:justify-start">
-              <Link href="/send" className="px-5 py-2.5 rounded bg-orange-500 hover:bg-orange-400 text-white font-medium transition-colors">
+            <div className="flex gap-3 items-center">
+              <Link href="/send" className="px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-400 text-white font-semibold transition-colors shadow-lg shadow-orange-900/40">
                 Create Stream
               </Link>
-              <Link href="/receive" className="px-5 py-2.5 rounded border border-neutral-700 text-neutral-300 hover:bg-neutral-800 transition-colors">
+              <Link href="/receive" className="px-6 py-3 rounded-lg border border-neutral-700 text-neutral-300 hover:bg-neutral-800 font-medium transition-colors">
                 View Received
-              </Link>
-              <Link href="/demo" className="px-5 py-2.5 rounded border border-orange-800 text-orange-400 hover:bg-orange-900/30 transition-colors">
-                Full Demo ↗
               </Link>
             </div>
           ) : (
-            <div className="flex gap-3 flex-wrap justify-center lg:justify-start">
-              <button onClick={connect} className="px-6 py-2.5 rounded bg-orange-500 hover:bg-orange-400 text-white font-medium transition-colors">
-                Connect Wallet to Start
+            <div className="flex gap-3 items-center">
+              <button onClick={connect} className="px-7 py-3 rounded-lg bg-orange-500 hover:bg-orange-400 text-white font-semibold transition-colors shadow-lg shadow-orange-900/40">
+                Connect Wallet
               </button>
-              <Link href="/demo" className="px-5 py-2.5 rounded border border-orange-800 text-orange-400 hover:bg-orange-900/30 transition-colors">
-                Full Demo ↗
-              </Link>
+
             </div>
           )}
         </div>
 
-        {/* Right: animated live stream widget */}
-        <div className="shrink-0 flex flex-col items-center gap-2">
+        {/* Right: live widget */}
+        <div className="flex-1 flex justify-center w-full">
           <HeroLiveDemo />
-          <p className="text-xs text-neutral-700">
-            demo · 1 block = 3 s · real blocks ≈ 10 min
-          </p>
         </div>
       </div>
 
-      {/* How it works */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-3xl">
+      {/* ── Divider ── */}
+      <div className="w-full max-w-3xl flex items-center gap-4 px-4">
+        <div className="flex-1 h-px bg-neutral-800" />
+        <span className="text-xs text-neutral-600 uppercase tracking-widest">How it works</span>
+        <div className="flex-1 h-px bg-neutral-800" />
+      </div>
+
+      {/* ── Steps ── */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-3xl px-4">
         {[
-          { step: "1", title: "Create a stream",       body: "Choose recipients (each with individual rates), select sBTC or STX, set your deposit." },
-          { step: "2", title: "Funds accrue each block", body: "Every Stacks block, recipients earn their share. Top up or cancel any time — no lock-in." },
-          { step: "3", title: "Recipients withdraw",   body: "Claim all accrued sBTC directly to a Bitcoin-backed wallet, any time." },
+          { step: "1", title: "Create a stream",        body: "Set recipients with individual rates, choose sBTC or STX, lock in your deposit." },
+          { step: "2", title: "Funds accrue each block", body: "Every Stacks block, each recipient earns their share. Top up or cancel any time." },
+          { step: "3", title: "Recipients withdraw",    body: "Claim all accrued sBTC to a Bitcoin-backed wallet — any time, no lock-in." },
         ].map(({ step, title, body }) => (
           <div key={step} className="rounded-xl border border-neutral-800 bg-neutral-900 p-5 text-left">
             <div className="text-orange-400 font-bold text-sm mb-2">Step {step}</div>
-            <div className="font-semibold mb-1">{title}</div>
-            <div className="text-sm text-neutral-400">{body}</div>
+            <div className="font-semibold mb-1 text-neutral-100">{title}</div>
+            <div className="text-sm text-neutral-400 leading-relaxed">{body}</div>
           </div>
         ))}
       </div>
 
-      <p className="text-xs text-neutral-600 font-mono pb-8">
-        Deployed on Stacks Testnet · Contract: satsflow-streams-v5
+      <p className="text-xs text-neutral-700 font-mono">
+        Stacks Testnet · satsflow-streams-v5
       </p>
     </div>
   );
 }
-
 
