@@ -1,112 +1,71 @@
-# SatsFlow
+# SatsFlow Pitch Deck
 
-SatsFlow is a Bitcoin-native continuous payment streaming app on Stacks.
+## 1. One-Liner
+SatsFlow enables continuous Bitcoin-backed contributor payouts on Stacks.
+Fund once, earnings accrue continuously, recipients withdraw anytime.
 
-It lets a sender create a funded stream that pays one or many recipients over time, with each recipient able to withdraw accrued funds at any time.
+## 2. Background
+Work on the internet happens continuously, but compensation is still processed in payout batches.
+Teams and creators often rely on weekly or monthly payment cycles that introduce delay, operational overhead, and trust friction.
 
-## What This Repo Contains
+At the same time, the Stacks ecosystem is focused on activating real Bitcoin utility through applications, with sBTC enabling programmable Bitcoin-backed flows.
+SatsFlow is built in this context: a practical payment primitive for contributor economies.
 
-- `satsflow-app/`: Next.js frontend (wallet connect, stream create/manage/withdraw flows)
-- `satsflow-contracts/`: Clarity smart contracts, tests, deployment plans, and testnet scripts
-- `implementation-plan-phases.md`: Build progress and roadmap notes
-- `pitch-deck.md`, `pitch-deck-compressed.md`: hackathon pitch materials
+## 3. Problem
+- Internet-native work is continuous, but payouts are periodic.
+- Contributors wait for earnings they have already generated.
+- Teams handle manual payout operations and reconciliation.
+- Cross-border payout timing and settlement friction increase complexity.
 
-## Current Status
+## 4. Solution
+SatsFlow turns contributor compensation into a live stream:
+- Sender creates and funds a stream.
+- Recipients accrue value over time based on explicit rates.
+- Recipients withdraw on demand through on-chain settlement.
+- Settlement is transparent, deterministic, and self-custodied.
 
-- Contract target in frontend: `ST2QFJV445B22TXQXYW0M3EDEYSDGDVV5N15PE2XN.satsflow-streams-v5`
-- Multi-recipient streams with per-recipient rates are supported
-- Sender and recipient dashboards are implemented
-- Recipient detail page is recipient-specific (your rate, withdrawn, allocation, remaining, claimable)
+## 5. Why Stacks + sBTC
+- Stacks is Bitcoin-aligned app infrastructure.
+- sBTC enables Bitcoin-backed programmable payment rails.
+- Clarity contracts make stream logic auditable and deterministic.
 
-## Core Contract Functions (v5)
+## 6. MVP (Hackathon Build)
+- Multi-recipient stream creation.
+- Per-recipient rates.
+- Sender top-up and cancel.
+- Recipient live claimable display.
+- Recipient on-demand withdraw.
+- Sender and recipient dashboards.
 
-Public:
-- `create-stream(recipient-entries, token, deposit, name, description)`
-- `withdraw(stream-id)`
-- `top-up-stream(stream-id, amount)`
-- `cancel-stream(stream-id)`
+## 7. Demo Flow
+1. Connect sender wallet.
+2. Create stream with multiple recipients and per-recipient rates.
+3. Open sender stream detail and show recipient rate table.
+4. Switch recipient wallet and open recipient stream detail.
+5. Show recipient-specific metrics: rate, withdrawn, allocation, remaining, claimable.
+6. Withdraw accrued amount and show state updates.
 
-Read-only:
-- `get-stream(stream-id)`
-- `get-stream-recipients(stream-id)`
-- `get-stream-recipient(stream-id, recipient)`
-- `get-claimable(stream-id, recipient)`
-- `get-sender-streams(sender)`
-- `get-recipient-streams(recipient)`
+## 8. Target Users
+- Stacks-native teams paying contributors.
+- Open-source maintainer groups.
+- Creator collectives.
+- Grant-funded contributor networks.
 
-## Tech Stack
+## 9. Why This Can Win
+- Practical and differentiated: continuous Bitcoin-backed payouts.
+- Technical depth: contract + frontend lifecycle flows.
+- UX clarity: accrual and withdrawal are easy to understand.
+- Ecosystem fit: strong alignment with sBTC utility.
 
-- Frontend: Next.js 16, React 19, TypeScript
-- Wallet: `@stacks/connect`
-- Contracts: Clarity + Clarinet
-- Network: Stacks testnet
+## 10. Bounty Fit
+Primary fit: Most Innovative Use of sBTC.
+SatsFlow uses sBTC as active payment infrastructure, not passive collateral.
 
-## Local Development
+## 11. Roadmap
+- Phase 1: Hardening, QA pass, and demo reliability.
+- Phase 2: Reporting/history and analytics.
+- Phase 3: Additional payout rails and integrations.
 
-### 1) Frontend
-
-```bash
-cd satsflow-app
-npm install
-npm run dev
-```
-
-Open `http://localhost:3000`.
-
-### 2) Smart Contracts
-
-```bash
-cd satsflow-contracts
-npm install
-npm test
-```
-
-Optional checks:
-
-```bash
-clarinet check
-```
-
-## Build
-
-From `satsflow-app/`:
-
-```bash
-npm run build
-```
-
-The production build uses Webpack (`next build --webpack`) for stable deploy behavior.
-
-## Deploy to Vercel
-
-From `satsflow-app/`:
-
-```bash
-vercel --prod --yes
-```
-
-If this is your first push from a local branch:
-
-```bash
-git push --set-upstream origin main
-```
-
-## Testnet Contract Deployment
-
-From `satsflow-contracts/`:
-
-```bash
-npm run preflight:testnet
-npm run deploy:testnet
-npm run smoke:testnet
-```
-
-## Notes
-
-- Stream accounting is integer-only.
-- Frontend token formatting shows concise decimal output for readability.
-- Withdraw/cancel transaction handling is configured to avoid false wallet aborts from restrictive post-condition mode.
-
-## License
-
-No license file is currently defined in this repository.
+## 12. Closing
+SatsFlow makes compensation internet-native: continuous, transparent, and self-custodied.
+Fund once, accrue continuously, withdraw anytime.

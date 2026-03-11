@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   cvToHex,
   uintCV,
@@ -224,4 +224,89 @@ export function useRecipientStates(
   }, [streamId, callerAddress, recipientAddresses.join(",")]);
 
   return states;
+}
+
+// --- Hook: BNS .btc name for an address (returns null when none) ---
+export function useBnsName(address: string | null): string | null {
+  const [name, setName] = useState<string | null>(null);
+  useEffect(() => {
+    if (!address) return;
+    let cancelled = false;
+    fetch(`${HIRO_API_BASE}/v1/addresses/stacks/${address}`)
+      .then((r) => r.json())
+      .then((data: { names?: string[] }) => {
+        if (!cancelled && data.names && data.names.length > 0) {
+          setName(data.names[0]);
+        }
+      })
+      .catch(() => {});
+    return () => { cancelled = true; };
+  }, [address]);
+  return name;
+}
+
+// --- Hook: live-interpolated claimable (ticks every second between polls) ---
+// ratePerBlock is the per-block rate; Stacks blocks avg 600s.
+export function useLiveClaimable(
+  baseClaimable: bigint | null,
+  ratePerBlock: bigint | null
+): bigint | null {
+  const [live, setLive] = useState<bigint | null>(null);
+  const lastPollRef = useRef<{ time: number; value: bigint } | null>(null);
+
+  useEffect(() => {
+    if (baseClaimable === null) return;
+    lastPollRef.current = { time: Date.now(), value: baseClaimable };
+    setLive(baseClaimable);
+  }, [baseClaimable]);
+
+  useEffect(() => {
+    if (ratePerBlock === null || ratePerBlock === 0n) return;
+    const timer = setInterval(() => {
+      if (!lastPollRef.current) return;
+      const elapsed = (Date.now() - lastPollRef.current.time) / 1000;
+      const gain = BigInt(Math.floor((elapsed * Number(ratePerBlock)) / 600));
+      setLive(lastPollRef.current.value + gain);
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [ratePerBlock]);
+
+  return live;
+}
+
+// --- Hook: claimable for each stream in a list (for sweep-all on receive dashboard) ---
+export function useMultiClaimable(
+  streamIds: number[],
+  recipientAddress: string | null
+): Record<number, bigint> {
+  const [claimables, setClaimables] = useState<Record<number, bigint>>({});
+
+  const fetch_ = useCallback(async () => {
+    if (!recipientAddress || streamIds.length === 0) return;
+    const results = await Promise.allSettled(
+      streamIds.map((id) =>
+        readOnly("get-claimable", [uintCV(id), principalCV(recipientAddress)], recipientAddress)
+          .then((cv) => {
+            if (cv.type === ClarityType.ResponseOk) {
+              return { id, value: BigInt((cv.value as { value: bigint }).value) };
+            }
+            return { id, value: 0n };
+          })
+          .catch(() => ({ id, value: 0n }))
+      )
+    );
+    const map: Record<number, bigint> = {};
+    results.forEach((r) => {
+      if (r.status === "fulfilled") map[r.value.id] = r.value.value;
+    });
+    setClaimables(map);
+  }, [streamIds.join(","), recipientAddress]);
+
+  useEffect(() => {
+    fetch_();
+    const t = setInterval(fetch_, 15_000);
+    return () => clearInterval(t);
+  }, [fetch_]);
+
+  return claimables;
 }

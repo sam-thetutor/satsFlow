@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { useWallet } from "@/lib/wallet";
 import { useCreateStream } from "@/lib/hooks/useTransactions";
@@ -15,7 +16,7 @@ export default function SendPage() {
   const createStream = useCreateStream();
 
   const [entries, setEntries]         = useState<RecipientEntry[]>([{ address: "", rate: "" }]);
-  const [token, setToken]             = useState<TokenKey>("STX");
+  const [token, setToken]             = useState<TokenKey>("sBTC");
   const [deposit, setDeposit]         = useState("");
   const [name, setName]               = useState("");
   const [description, setDescription] = useState("");
@@ -121,18 +122,7 @@ export default function SendPage() {
       <h1 className="text-2xl font-bold mb-6">Create Payment Stream</h1>
 
       {txId ? (
-        <div className="rounded-xl border border-green-700 bg-neutral-900 p-6 text-center">
-          <p className="text-green-400 font-semibold mb-2">Stream created!</p>
-          <p className="text-xs font-mono text-neutral-400 break-all">{txId}</p>
-          <a
-            href={`https://explorer.hiro.so/txid/${txId}?chain=testnet`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 inline-block text-sm text-orange-400 underline"
-          >
-            View on Explorer
-          </a>
-        </div>
+        <SuccessScreen txId={txId} token={token} name={name} recipientCount={entries.length} deposit={deposit} onReset={() => { setTxId(null); setName(""); setDescription(""); setDeposit(""); setEntries([{ address: "", rate: "" }]); }} />
       ) : (
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
 
@@ -144,9 +134,14 @@ export default function SendPage() {
               onChange={(e) => setToken(e.target.value as TokenKey)}
             >
               {(Object.keys(SUPPORTED_TOKENS) as TokenKey[]).map((k) => (
-                <option key={k} value={k}>{k}</option>
+                <option key={k} value={k}>{k}{k === "sBTC" ? " — real Bitcoin on Stacks" : " — Stacks native token"}</option>
               ))}
             </select>
+            {token === "sBTC" && (
+              <span className="text-xs text-orange-400 mt-1">
+                ✦ Streaming real Bitcoin — backed by Bitcoin L1 finality via Stacks
+              </span>
+            )}
           </label>
 
           <label className="flex flex-col gap-1 text-sm">
@@ -253,6 +248,96 @@ export default function SendPage() {
           </button>
         </form>
       )}
+    </div>
+  );
+}
+
+function SuccessScreen({
+  txId,
+  token,
+  name,
+  recipientCount,
+  deposit,
+  onReset,
+}: {
+  txId: string;
+  token: TokenKey;
+  name: string;
+  recipientCount: number;
+  deposit: string;
+  onReset: () => void;
+}) {
+  const [copied, setCopied] = useState(false);
+
+  function copyTx() {
+    navigator.clipboard.writeText(txId).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  }
+
+  return (
+    <div className="flex flex-col gap-5">
+      <div className="rounded-xl border border-green-700 bg-neutral-900 p-6 flex flex-col gap-4">
+        <div className="flex items-center gap-3">
+          <span className="text-2xl">✅</span>
+          <div>
+            <p className="text-green-400 font-semibold text-lg">Stream submitted!</p>
+            <p className="text-neutral-400 text-sm">Transaction broadcast to Stacks testnet</p>
+          </div>
+        </div>
+
+        <div className="rounded-lg bg-neutral-800 p-3 flex flex-col gap-1.5 text-sm">
+          {name && <div className="flex justify-between"><span className="text-neutral-500">Name</span><span className="text-neutral-200">{name}</span></div>}
+          <div className="flex justify-between"><span className="text-neutral-500">Token</span><span className="text-neutral-200">{token}</span></div>
+          <div className="flex justify-between"><span className="text-neutral-500">Deposit</span><span className="text-neutral-200">{deposit} {token}</span></div>
+          <div className="flex justify-between"><span className="text-neutral-500">Recipients</span><span className="text-neutral-200">{recipientCount}</span></div>
+        </div>
+
+        <div className="flex flex-col gap-2 text-sm">
+          <p className="text-neutral-500 text-xs">Transaction ID</p>
+          <div className="flex items-center gap-2">
+            <span className="font-mono text-xs text-neutral-400 break-all flex-1">{txId}</span>
+            <button
+              onClick={copyTx}
+              className="shrink-0 text-xs px-2 py-1 rounded border border-neutral-700 text-neutral-300 hover:bg-neutral-800 transition-colors"
+            >
+              {copied ? "Copied!" : "Copy"}
+            </button>
+          </div>
+          <a
+            href={`https://explorer.hiro.so/txid/${txId}?chain=testnet`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-orange-400 underline"
+          >
+            View on Stacks Explorer ↗
+          </a>
+        </div>
+      </div>
+
+      <div className="rounded-xl border border-neutral-800 bg-neutral-900 p-5 text-sm flex flex-col gap-3">
+        <p className="font-semibold">What&apos;s next?</p>
+        <p className="text-neutral-400 text-sm">
+          Once the transaction confirms (usually under 1 minute on testnet), your stream will
+          appear in <strong className="text-neutral-200">My Streams</strong>. From there,
+          copy the recipient link and share it with each payee.
+        </p>
+        <div className="flex gap-3 flex-wrap">
+          <Link
+            href="/send/dashboard"
+            className="px-4 py-2 rounded bg-orange-500 hover:bg-orange-400 text-white text-sm font-medium transition-colors"
+          >
+            Go to My Streams →
+          </Link>
+          <button
+            onClick={onReset}
+            className="px-4 py-2 rounded border border-neutral-700 text-neutral-300 hover:bg-neutral-800 text-sm transition-colors"
+          >
+            Create Another
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
