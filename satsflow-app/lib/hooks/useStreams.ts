@@ -10,7 +10,7 @@ import {
 } from "@stacks/transactions";
 import { CONTRACT_ADDRESS, CONTRACT_NAME } from "@/lib/contract";
 import { HIRO_API_BASE } from "@/lib/network";
-import { Stream } from "@/lib/types";
+import { Stream, YieldInfo } from "@/lib/types";
 
 // --- Helper: call a read-only function and deserialize the result ---
 async function readOnly(
@@ -52,6 +52,12 @@ function parseStream(id: number, cv: ReturnType<typeof deserializeCV>): Stream {
     recipient_count: BigInt((t.recipient_count as { value: bigint }).value),
     name: (t.name as { value: string }).value,
     description: (t.description as { value: string }).value,
+    yield_enabled: (t.yield_enabled as { type: ClarityType.BoolTrue | ClarityType.BoolFalse }).type === ClarityType.BoolTrue,
+    reserve_ratio_bps: BigInt((t.reserve_ratio_bps as { value: bigint }).value),
+    deployed_principal: BigInt((t.deployed_principal as { value: bigint }).value),
+    lp_token_balance: BigInt((t.lp_token_balance as { value: bigint }).value),
+    total_yield_harvested: BigInt((t.total_yield_harvested as { value: bigint }).value),
+    strategy_status: BigInt((t.strategy_status as { value: bigint }).value),
   };
 }
 
@@ -243,6 +249,41 @@ export function useBnsName(address: string | null): string | null {
     return () => { cancelled = true; };
   }, [address]);
   return name;
+}
+
+// --- Hook: yield info for a stream ---
+export function useYieldInfo(streamId: number | null, callerAddress: string | null) {
+  const [yieldInfo, setYieldInfo] = useState<YieldInfo | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  const fetch_ = useCallback(async () => {
+    if (streamId === null || !callerAddress) return;
+    setLoading(true);
+    try {
+      const cv = await readOnly("get-yield-info", [uintCV(streamId)], callerAddress);
+      if (cv.type === ClarityType.ResponseOk && cv.value.type === ClarityType.Tuple) {
+        const t = (cv.value as unknown as { value: Record<string, ReturnType<typeof deserializeCV>> }).value;
+        setYieldInfo({
+          yield_enabled: (t.yield_enabled as { type: ClarityType.BoolTrue | ClarityType.BoolFalse }).type === ClarityType.BoolTrue,
+          reserve_ratio_bps: BigInt((t.reserve_ratio_bps as { value: bigint }).value),
+          deployed_principal: BigInt((t.deployed_principal as { value: bigint }).value),
+          lp_token_balance: BigInt((t.lp_token_balance as { value: bigint }).value),
+          total_yield_harvested: BigInt((t.total_yield_harvested as { value: bigint }).value),
+          last_harvest_timestamp: BigInt((t.last_harvest_timestamp as { value: bigint }).value),
+          strategy_status: BigInt((t.strategy_status as { value: bigint }).value),
+          liquid_reserve: BigInt((t.liquid_reserve as { value: bigint }).value),
+        });
+      }
+    } catch {
+      // ignore
+    } finally {
+      setLoading(false);
+    }
+  }, [streamId, callerAddress]);
+
+  useEffect(() => { fetch_(); }, [fetch_]);
+
+  return { yieldInfo, loading, refetch: fetch_ };
 }
 
 // --- Hook: live-interpolated claimable (ticks every second between polls) ---

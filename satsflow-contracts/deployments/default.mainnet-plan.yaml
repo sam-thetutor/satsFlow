@@ -1,0 +1,31 @@
+id: 0
+name: Mainnet deployment
+network: mainnet
+stacks-node: https://api.hiro.so
+bitcoin-node: http://blockstack:blockstacksystem@bitcoin.blockstack.com:8332
+plan:
+  batches:
+  - id: 0
+    transactions:
+    - transaction-type: contract-publish
+      contract-name: satsflow-streams-v5
+      expected-sender: SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX
+      cost: 167470
+      path: contracts/satsflow-streams-v5.clar
+      anchor-block-only: true
+      clarity-version: 4
+    - transaction-type: contract-publish
+      contract-name: satsflow-streams-v6
+      expected-sender: SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX
+      cost: 433050
+      path: contracts/satsflow-streams-v6.clar
+      anchor-block-only: true
+      clarity-version: 3
+    - transaction-type: contract-publish
+      contract-name: satsflow-streams-v7
+      expected-sender: SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX
+      cost: 433430
+      path: contracts/satsflow-streams-v7.clar
+      anchor-block-only: true
+      clarity-version: 3
+    epoch: '3.3'

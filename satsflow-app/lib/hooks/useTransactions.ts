@@ -112,6 +112,66 @@ export function useCreateStream() {
   );
 }
 
+// --- create-stream-with-yield (sBTC only) ---
+export function useCreateStreamWithYield() {
+  const { address } = useWallet();
+
+  return useCallback(
+    async (
+      recipientEntries: { recipient: string; rate: bigint }[],
+      deposit: bigint,
+      name: string,
+      description: string,
+      reserveRatioBps: number,
+      onSuccess: (txId: string) => void,
+      onCancel?: () => void
+    ) => {
+      const [connectModule, userSession] = await Promise.all([
+        import("@stacks/connect"),
+        getUserSession(),
+      ]);
+      const openContractCall = getOpenContractCall(connectModule as ConnectModule);
+      if (!address) throw new Error("Wallet not connected");
+
+      const entriesCV = recipientEntries.map((e) =>
+        tupleCV({ recipient: principalCV(e.recipient), rate_per_second: uintCV(e.rate) })
+      );
+      const postConditions = [
+        // Sender sends at most `deposit` sats into the contract
+        Pc.principal(address).willSendLte(deposit).ft(SBTC_ASSET_CONTRACT_ID, SBTC_ASSET_NAME),
+        // Contract forwards a portion of `deposit` to Bitflow (yield deployment)
+        Pc.principal(`${CONTRACT_ADDRESS}.${CONTRACT_NAME}`).willSendLte(deposit).ft(SBTC_ASSET_CONTRACT_ID, SBTC_ASSET_NAME),
+      ];
+
+      // The Bitflow XYK pool also moves STX internally when adding sBTC/STX liquidity.
+      // That cross-contract STX movement can't be post-conditioned precisely (depends on
+      // live pool ratio), so we use Allow mode here. The two sBTC post-conditions above
+      // still guard the user's own sBTC spend.
+      const pcMode = PostConditionMode.Allow;
+
+      openContractCall({
+        contractAddress: CONTRACT_ADDRESS,
+        contractName: CONTRACT_NAME,
+        network: NETWORK,
+        userSession,
+        functionName: "create-stream-with-yield",
+        functionArgs: [
+          listCV(entriesCV),
+          uintCV(deposit),
+          stringAsciiCV(name),
+          stringAsciiCV(description),
+          uintCV(reserveRatioBps),
+        ],
+        postConditions,
+        postConditionMode: pcMode,
+        onFinish: (data: { txId: string }) => onSuccess(data.txId),
+        onCancel,
+      });
+    },
+    [address]
+  );
+}
+
 // --- withdraw ---
 export function useWithdraw() {
   return useCallback(

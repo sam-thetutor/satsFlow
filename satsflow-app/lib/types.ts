@@ -14,6 +14,24 @@ export interface Stream {
   recipient_count: bigint;
   name: string;
   description: string;
+  // Yield fields (always present in v7; false/0 for non-yield streams)
+  yield_enabled: boolean;
+  reserve_ratio_bps: bigint;
+  deployed_principal: bigint;
+  lp_token_balance: bigint;
+  total_yield_harvested: bigint;
+  strategy_status: bigint; // 0 = inactive, 1 = active
+}
+
+export interface YieldInfo {
+  yield_enabled: boolean;
+  reserve_ratio_bps: bigint;
+  deployed_principal: bigint;
+  lp_token_balance: bigint;
+  total_yield_harvested: bigint;
+  last_harvest_timestamp: bigint;
+  strategy_status: bigint;
+  liquid_reserve: bigint;
 }
 
 // Raw Clarity read-only response shape
@@ -72,5 +90,12 @@ export function parseTupleStream(
     ),
     name: (tuple.name as unknown as { type: "string-ascii"; value: string }).value,
     description: (tuple.description as unknown as { type: "string-ascii"; value: string }).value,
+    // Yield fields (v7+; default to false/0 if absent)
+    yield_enabled: ((tuple.yield_enabled as { type: "bool"; value: boolean } | undefined)?.value) ?? false,
+    reserve_ratio_bps: BigInt(((tuple.reserve_ratio_bps as { type: "uint"; value: string } | undefined)?.value) ?? 0),
+    deployed_principal: BigInt(((tuple.deployed_principal as { type: "uint"; value: string } | undefined)?.value) ?? 0),
+    lp_token_balance: BigInt(((tuple.lp_token_balance as { type: "uint"; value: string } | undefined)?.value) ?? 0),
+    total_yield_harvested: BigInt(((tuple.total_yield_harvested as { type: "uint"; value: string } | undefined)?.value) ?? 0),
+    strategy_status: BigInt(((tuple.strategy_status as { type: "uint"; value: string } | undefined)?.value) ?? 0),
   };
 }

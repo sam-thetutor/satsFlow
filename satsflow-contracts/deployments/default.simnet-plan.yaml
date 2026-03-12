@@ -63,6 +63,64 @@ plan:
   - id: 0
     transactions:
     - transaction-type: emulated-contract-publish
+      contract-name: sip-010-trait-ft-standard-v-1-1
+      emulated-sender: SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR
+      path: .cache/requirements/SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.sip-010-trait-ft-standard-v-1-1.clar
+      clarity-version: 2
+    - transaction-type: emulated-contract-publish
+      contract-name: token-stx-v-1-2
+      emulated-sender: SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR
+      path: .cache/requirements/SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.token-stx-v-1-2.clar
+      clarity-version: 2
+    - transaction-type: emulated-contract-publish
+      contract-name: xyk-pool-trait-v-1-2
+      emulated-sender: SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR
+      path: .cache/requirements/SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-trait-v-1-2.clar
+      clarity-version: 2
+    - transaction-type: emulated-contract-publish
+      contract-name: xyk-core-v-1-2
+      emulated-sender: SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR
+      path: .cache/requirements/SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-core-v-1-2.clar
+      clarity-version: 2
+    - transaction-type: emulated-contract-publish
+      contract-name: bridge-ft-trait
+      emulated-sender: SP14NS8MVBRHXMM96BQY0727AJ59SWPV7RMHC0NCG
+      path: .cache/requirements/SP14NS8MVBRHXMM96BQY0727AJ59SWPV7RMHC0NCG.bridge-ft-trait.clar
+      clarity-version: 2
+    - transaction-type: emulated-contract-publish
+      contract-name: bridge-nft-trait
+      emulated-sender: SP14NS8MVBRHXMM96BQY0727AJ59SWPV7RMHC0NCG
+      path: .cache/requirements/SP14NS8MVBRHXMM96BQY0727AJ59SWPV7RMHC0NCG.bridge-nft-trait.clar
+      clarity-version: 2
+    - transaction-type: emulated-contract-publish
+      contract-name: bridge-trait
+      emulated-sender: SP14NS8MVBRHXMM96BQY0727AJ59SWPV7RMHC0NCG
+      path: .cache/requirements/SP14NS8MVBRHXMM96BQY0727AJ59SWPV7RMHC0NCG.bridge-trait.clar
+      clarity-version: 2
+    - transaction-type: emulated-contract-publish
+      contract-name: sip-010-trait-ft-standard
+      emulated-sender: SP14NS8MVBRHXMM96BQY0727AJ59SWPV7RMHC0NCG
+      path: .cache/requirements/SP14NS8MVBRHXMM96BQY0727AJ59SWPV7RMHC0NCG.sip-010-trait-ft-standard.clar
+      clarity-version: 2
+    - transaction-type: emulated-contract-publish
+      contract-name: pontis-bridge-controller
+      emulated-sender: SP14NS8MVBRHXMM96BQY0727AJ59SWPV7RMHC0NCG
+      path: .cache/requirements/SP14NS8MVBRHXMM96BQY0727AJ59SWPV7RMHC0NCG.pontis-bridge-controller.clar
+      clarity-version: 2
+    - transaction-type: emulated-contract-publish
+      contract-name: trait-ownable
+      emulated-sender: SP14NS8MVBRHXMM96BQY0727AJ59SWPV7RMHC0NCG
+      path: .cache/requirements/SP14NS8MVBRHXMM96BQY0727AJ59SWPV7RMHC0NCG.trait-ownable.clar
+      clarity-version: 2
+    - transaction-type: emulated-contract-publish
+      contract-name: pontis-bridge-BDC
+      emulated-sender: SP14NS8MVBRHXMM96BQY0727AJ59SWPV7RMHC0NCG
+      path: .cache/requirements/SP14NS8MVBRHXMM96BQY0727AJ59SWPV7RMHC0NCG.pontis-bridge-BDC.clar
+      clarity-version: 2
+    epoch: '2.5'
+  - id: 1
+    transactions:
+    - transaction-type: emulated-contract-publish
       contract-name: sbtc-registry
       emulated-sender: SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4
       path: .cache/requirements/SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-registry.clar
@@ -78,11 +136,34 @@ plan:
       path: .cache/requirements/SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-deposit.clar
       clarity-version: 3
     epoch: '3.0'
-  - id: 1
+  - id: 2
+    transactions:
+    - transaction-type: emulated-contract-publish
+      contract-name: xyk-pool-sbtc-bdc-v-1-1
+      emulated-sender: SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR
+      path: .cache/requirements/SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-bdc-v-1-1.clar
+      clarity-version: 2
+    - transaction-type: emulated-contract-publish
+      contract-name: xyk-pool-sbtc-stx-v-1-1
+      emulated-sender: SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR
+      path: .cache/requirements/SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1.clar
+      clarity-version: 2
+    epoch: '3.1'
+  - id: 3
     transactions:
     - transaction-type: emulated-contract-publish
       contract-name: satsflow-streams-v5
       emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
       path: contracts/satsflow-streams-v5.clar
       clarity-version: 4
+    - transaction-type: emulated-contract-publish
+      contract-name: satsflow-streams-v6
+      emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+      path: contracts/satsflow-streams-v6.clar
+      clarity-version: 3
+    - transaction-type: emulated-contract-publish
+      contract-name: satsflow-streams-v7
+      emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+      path: contracts/satsflow-streams-v7.clar
+      clarity-version: 3
     epoch: '3.3'

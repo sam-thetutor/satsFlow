@@ -1,0 +1,1246 @@
+Script started on Thu Mar 12 06:34:52 2026
+/Users/samthetutor/.openclaw/completions/openclaw.zsh:3596: command not found: compdef
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  printf '\x03\n'[?2004l
+
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  node scripts/check-yield-stream.mj [Ks[?2004l
+═══════════════════════════════════════════════════
+ STREAM #1 — satsflow-streams-v7 (mainnet)
+═══════════════════════════════════════════════════
+(ok (some (tuple (deployed_principal u250)
+  (deposit u500)
+  (description "v7 yield test - 500 sats sBTC-STX LP")
+  (duration u500)
+  (is_active true)
+  (last_harvest_timestamp u0)
+  (last_withdraw_timestamp u940343)
+  (lp_token_balance u6203)
+  (name "yield-smoke-v7")
+  (rate_per_second u1)
+  (recipient_count u1)
+  (reserve_ratio_bps u5000)
+  (sender SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX)
+  (start_timestamp u940343)
+  (strategy_status u1)
+  (token SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token)
+  (total_withdrawn u0)
+  (total_yield_harvested u0)
+  (yield_enabled true))))
+
+═══════════════════════════════════════════════════
+ YIELD INFO
+═══════════════════════════════════════════════════
+(ok (tuple (deployed_principal u250)
+  (last_harvest_timestamp u0)
+  (liquid_reserve u250)
+  (lp_token_balance u6203)
+  (reserve_ratio_bps u5000)
+  (strategy_status u1)
+  (total_yield_harvested u0)
+  (yield_enabled true)))
+  claimable by recipient : 0 sats
+
+═══════════════════════════════════════════════════
+ BITFLOW sBTC-STX POOL — LP POSITION
+═══════════════════════════════════════════════════
+  LP tokens held by v7  : 6,203
+  Pool total supply     : 51,475,290,006
+  Pool ownership        : 0.000012%
+  Pool x-reserve (sBTC) : 1037147079 sats  (10.37147079 sBTC)
+  Pool y-reserve (uSTX) : 2849883846061  (2849883.8461 STX)
+  Est. sBTC backing LP  : ~125 sats
+  sBTC in v7 contract   : (ok u250)  (liquid reserve)
+
+═══════════════════════════════════════════════════
+ LINKS
+═══════════════════════════════════════════════════
+  Contract : https://explorer.hiro.so/address/SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX.satsflow-streams-v7?chain=mainnet
+  Pool     : https://explorer.hiro.so/address/SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1?chain=mainnet
+  Deployer : https://explorer.hiro.so/address/SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX?chain=mainnet
+  Create tx: https://explorer.hiro.so/txid/8e14ca726a70ff9c0744c3584ac60d0ad1f2f7b8131fb2eb5e76889fd95b13b5?chain=mainnet
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  node scripts/check-yield-stream.mj [Kss 2>&1[?2004l
+═══════════════════════════════════════════════════
+ STREAM #1 — satsflow-streams-v7 (mainnet)
+═══════════════════════════════════════════════════
+(ok (some (tuple (deployed_principal u250)
+  (deposit u500)
+  (description "v7 yield test - 500 sats sBTC-STX LP")
+  (duration u500)
+  (is_active true)
+  (last_harvest_timestamp u0)
+  (last_withdraw_timestamp u940343)
+  (lp_token_balance u6203)
+  (name "yield-smoke-v7")
+  (rate_per_second u1)
+  (recipient_count u1)
+  (reserve_ratio_bps u5000)
+  (sender SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX)
+  (start_timestamp u940343)
+  (strategy_status u1)
+  (token SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token)
+  (total_withdrawn u0)
+  (total_yield_harvested u0)
+  (yield_enabled true))))
+
+═══════════════════════════════════════════════════
+ YIELD INFO
+═══════════════════════════════════════════════════
+(ok (tuple (deployed_principal u250)
+  (last_harvest_timestamp u0)
+  (liquid_reserve u250)
+  (lp_token_balance u6203)
+  (reserve_ratio_bps u5000)
+  (strategy_status u1)
+  (total_yield_harvested u0)
+  (yield_enabled true)))
+  claimable by recipient : 0 sats
+
+═══════════════════════════════════════════════════
+ BITFLOW sBTC-STX POOL — LP POSITION
+═══════════════════════════════════════════════════
+  LP tokens held by v7  : 6,203
+  Pool total supply     : 51,475,290,006
+  Pool ownership        : 0.000012%
+  Pool x-reserve (sBTC) : 1037147079 sats  (10.37147079 sBTC)
+  Pool y-reserve (uSTX) : 2849883846061  (2849883.8461 STX)
+  Est. sBTC backing LP  : ~125 sats
+  sBTC in v7 contract   : (ok u250)  (liquid reserve)
+
+═══════════════════════════════════════════════════
+ LINKS
+═══════════════════════════════════════════════════
+  Contract : https://explorer.hiro.so/address/SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX.satsflow-streams-v7?chain=mainnet
+  Pool     : https://explorer.hiro.so/address/SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1?chain=mainnet
+  Deployer : https://explorer.hiro.so/address/SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX?chain=mainnet
+  Create tx: https://explorer.hiro.so/txid/8e14ca726a70ff9c0744c3584ac60d0ad1f2f7b8131fb2eb5e76889fd95b13b5?chain=mainnet
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  cat package.json[?2004l
+{
+  "name": "satsflow-contracts-tests",
+  "version": "1.0.0",
+  "description": "Run unit tests on this project.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "vitest run",
+    "test:report": "vitest run -- --coverage --costs",
+    "test:watch": "chokidar \"tests/**/*.ts\" \"contracts/**/*.clar\" -c \"npm run test:report\"",
+    "preflight:testnet": "./scripts/preflight-testnet.sh",
+    "deploy:testnet": "./scripts/deploy-testnet.sh",
+    "smoke:testnet": "./scripts/smoke-testnet-interface.sh"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@stacks/clarinet-sdk": "^3.9.0",
+    "@stacks/transactions": "^7.2.0",
+    "@stacks/wallet-sdk": "^7.2.0",
+    "@types/node": "^24.4.0",
+    "chokidar-cli": "^3.0.0",
+    "vitest": "^4.0.7",
+    "vitest-environment-clarinet": "^3.0.0"
+  },
+  "devDependencies": {
+    "bip39": "^3.1.0"
+  }
+}
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  node -e "import('@stacks/transacti [Koons').then(t => { console.log(Object.keys(t).filter(k => k.includes('uint') || k.includes('prin [Kccipal') || k.includes('ToHex'))) })"[?2004l
+[
+  [32m'cvToHex'[39m,
+  [32m'postConditionToHex'[39m,
+  [32m'principalCV'[39m,
+  [32m'privateKeyToHex'[39m,
+  [32m'publicKeyToHex'[39m,
+  [32m'transactionToHex'[39m,
+  [32m'uintCV'[39m
+]
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  node --unhandled-rejections=warn s [Kccripts/check-yield-stream.mjs 2>&1 | head -30[?2004l
+═══════════════════════════════════════════════════
+ STREAM #1 — satsflow-streams-v7 (mainnet)
+═══════════════════════════════════════════════════
+(ok (some (tuple (deployed_principal u250)
+  (deposit u500)
+  (description "v7 yield test - 500 sats sBTC-STX LP")
+  (duration u500)
+  (is_active true)
+  (last_harvest_timestamp u0)
+  (last_withdraw_timestamp u940343)
+  (lp_token_balance u6203)
+  (name "yield-smoke-v7")
+  (rate_per_second u1)
+  (recipient_count u1)
+  (reserve_ratio_bps u5000)
+  (sender SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX)
+  (start_timestamp u940343)
+  (strategy_status u1)
+  (token SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token)
+  (total_withdrawn u0)
+  (total_yield_harvested u0)
+  (yield_enabled true))))
+
+═══════════════════════════════════════════════════
+ YIELD INFO
+═══════════════════════════════════════════════════
+(ok (tuple (deployed_principal u250)
+  (last_harvest_timestamp u0)
+  (liquid_reserve u250)
+  (lp_token_balance u6203)
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  timeout 15 node scripts/check-yiel [Kdd-stream.mjs; echo "Exit: $?"[?2004l
+zsh: command not found: timeout
+Exit: 127
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  cd /Users/samthetutor/My-Work/Proj [Keects/Hackathon/Stacks/satsflow/satsflow-contracts && node scripts/check-yield-stream.mjs &[?2004l
+[1] 24757
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004hssleep 12 && kill %1 2>/dev/null; wa [Kiit 2>/dev/null; echo done[?2004l
+═══════════════════════════════════════════════════
+ STREAM #1 — satsflow-streams-v7 (mainnet)
+═══════════════════════════════════════════════════
+(ok (some (tuple (deployed_principal u250)
+  (deposit u500)
+  (description "v7 yield test - 500 sats sBTC-STX LP")
+  (duration u500)
+  (is_active true)
+  (last_harvest_timestamp u0)
+  (last_withdraw_timestamp u940343)
+  (lp_token_balance u6203)
+  (name "yield-smoke-v7")
+  (rate_per_second u1)
+  (recipient_count u1)
+  (reserve_ratio_bps u5000)
+  (sender SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX)
+  (start_timestamp u940343)
+  (strategy_status u1)
+  (token SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token)
+  (total_withdrawn u0)
+  (total_yield_harvested u0)
+  (yield_enabled true))))
+
+═══════════════════════════════════════════════════
+ YIELD INFO
+═══════════════════════════════════════════════════
+(ok (tuple (deployed_principal u250)
+  (last_harvest_timestamp u0)
+  (liquid_reserve u250)
+  (lp_token_balance u6203)
+  (reserve_ratio_bps u5000)
+  (strategy_status u1)
+  (total_yield_harvested u0)
+  (yield_enabled true)))
+  claimable by recipient : 1 sats
+
+═══════════════════════════════════════════════════
+ BITFLOW sBTC-STX POOL — LP POSITION
+═══════════════════════════════════════════════════
+  LP tokens held by v7  : 6,203
+  Pool total supply     : 51,475,290,006
+  Pool ownership        : 0.000012%
+  Pool x-reserve (sBTC) : 1037147079 sats  (10.37147079 sBTC)
+  Pool y-reserve (uSTX) : 2849883846061  (2849883.8461 STX)
+  Est. sBTC backing LP  : ~125 sats
+  sBTC in v7 contract   : (ok u250)  (liquid reserve)
+
+═══════════════════════════════════════════════════
+ LINKS
+═══════════════════════════════════════════════════
+  Contract : https://explorer.hiro.so/address/SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX.satsflow-streams-v7?chain=mainnet
+  Pool     : https://explorer.hiro.so/address/SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1?chain=mainnet
+  Deployer : https://explorer.hiro.so/address/SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX?chain=mainnet
+  Create tx: https://explorer.hiro.so/txid/8e14ca726a70ff9c0744c3584ac60d0ad1f2f7b8131fb2eb5e76889fd95b13b5?chain=mainnet
+[1]  + done       node scripts/check-yield-stream.mjs
+^C
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  echo "checking"[?2004l
+checking
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  curl -s --max-time 10 "https://api [K..hiro.so/v2/info" | head -c 200[?2004l
+{"peer_version":402653198,"pox_consensus":"6b336e08510b94d306e7271326de4a95c9e58ce6","burn_block_height":940344,"stable_pox_consensus":"f8f1142cb2da423dd62b94bd5d65f820b4080683","stable_burn_block_hei[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  curl -s --max-time 10 \[?2004l
+[0m[27m[24m[J> [K[?2004h   -X POST \[?2004l
+[0m[27m[24m[J> [K[?2004h   -H "content-type: application/json" \[?2004l
+[0m[27m[24m[J> [K[?2004h   -d '{"sender":"SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX","arguments":["0100000000000000000 [K0000000000000001"]}' \[?2004l
+[0m[27m[24m[J> [K[?2004h   "https://api.hiro.so/v2/contracts/call-read/SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX/satsf [Kllow-streams-v7/get-stream"[?2004l
+{"okay":true,"result":"0x070a0c00000013126465706c6f7965645f7072696e636970616c01000000000000000000000000000000fa076465706f73697401000000000000000000000000000001f40b6465736372697074696f6e0d000000247637207969656c642074657374202d20353030207361747320734254432d535458204c50086475726174696f6e01000000000000000000000000000001f40969735f61637469766503166c6173745f686172766573745f74696d657374616d700100000000000000000000000000000000176c6173745f77697468647261775f74696d657374616d7001000000000000000000000000000e5937106c705f746f6b656e5f62616c616e6365010000000000000000000000000000183b046e616d650d0000000e7969656c642d736d6f6b652d76370f726174655f7065725f7365636f6e6401000000000000000000000000000000010f726563697069656e745f636f756e74010000000000000000000000000000000111726573657276655f726174696f5f62707301000000000000000000000000000013880673656e646572051644e5f8715cfe2e2a73cfe55dba4ca8175ee756970f73746172745f74696d657374616d7001000000000000000000000000000e59370f73747261746567795f737461747573010000000000000000000000000000000105746f6b656e0614f6decc7cfff2a413bd7cd4f53c25ad7fd1899acc0a736274632d746f6b656e0f746f74616c5f77697468647261776e010000000000000000000000000000000015746f74616c5f7969656c645f68617276657374656401000000000000000000000000000000000d7969656c645f656e61626c656403"}[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  cd /Users/samthetutor/My-Work/Proj [Keects/Hackathon/Stacks/satsflow/satsflow-contracts && node -e "[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hiimport('@stacks/transactions').then(({ hexToCV, cvToString }) => {[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h   const r = '0x070a0c00000013126465706c6f7965645f7072696e636970616c0100000000000 [K000000000000000000000000fa076465706f7369740100000000000000000000000000000001f40b6465736372697074 [K6696f6e0d0000002476637920' ;[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h   // use the full result[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h   const full = '070a0c00000013126465706c6f7965645f7072696e636970616c010000000000 [K0000000000000000000000000fa076465706f7369740100000000000000000000000000000001f40b646573637269707 [K44696f6e0d000000247637207969656c642074657374202d20353030207361747320734254432d535458204c50086475 [K7726174696f6e01000000000000000000000000000001f40969735f61637469766503166c6173745f686172766573745 [Kff74696d657374616d700100000000000000000000000000000000176c6173745f77697468647261775f74696d657374 [K6616d70010000000000000000000000000e5937106c705f746f6b656e5f62616c616e636501000000000000000000000 [K00000000183b046e616d650d0000000e7969656c642d736d6f6b652d76370f726174655f70657import('@stacks/tra [Knnsactions').then(({ hexToCV, cvToString }) => {[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h   const r = '0x070a0c0000001300  const r = '0x070a0c00000013126465706c6f7965645f [K77072696e6369706100  // use the full result[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h   const full = '070a0c00000013126465706c6f7965645f7072696e636970616c010000000000 [K0000000000000000000000000fa076465706f7369740100000000000000000000000000000001f40b646573637269707 [K4400  const full = '070a0c014  const r = '0x070a0c0000001300  const r = '0x070a0c000000131264657 [K006c6f7965645f7072696e6369706100  // use the full result[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h   const full = '070a0c00000013126465706c6f7965645f7072696e636970616c010000000000 [K0000000000000000000000000fa076465706f7369740100000000000000000000000000000001f40b646573637269707 [K4400  const full = '070a0c014  const[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  node scripts/check-yield-stream.mj [Kss 2>&1[?2004l
+
+═══════════════════════════════════════════════════════
+  STREAM #1  —  satsflow-streams-v7  (mainnet)
+═══════════════════════════════════════════════════════
+(ok (some (tuple (deployed_principal u250)
+    (deposit u500)
+    (description "v7 yield test - 500 sats sBTC-STX LP")
+    (duration u500)
+    (is_active true)
+    (last_harvest_timestamp u0)
+    (last_withdraw_timestamp u940343)
+    (lp_token_balance u6203)
+    (name "yield-smoke-v7")
+    (rate_per_second u1)
+    (recipient_count u1)
+    (reserve_ratio_bps u5000)
+    (sender SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX)
+    (start_timestamp u940343)
+    (strategy_status u1)
+    (token SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token)
+    (total_withdrawn u0)
+    (total_yield_harvested u0)
+    (yield_enabled true))))
+
+─── YIELD INFO ────────────────────────────────────────
+(ok (tuple (deployed_principal u250)
+    (last_harvest_timestamp u0)
+    (liquid_reserve u250)
+    (lp_token_balance u6203)
+    (reserve_ratio_bps u5000)
+    (strategy_status u1)
+    (total_yield_harvested u0)
+    (yield_enabled true)))
+    claimable by recipient : 1 sats
+
+─── BITFLOW sBTC-STX LP POSITION ──────────────────────
+    LP tokens held by v7 contract : 6,203
+    Pool total LP supply          : 51,475,290,006
+    Pool ownership                : 0.000000%
+    Pool x-reserve (sBTC)         : 1037147079 sats  (10.37147079 sBTC)
+    Pool y-reserve (uSTX)         : 2849883846061  (2849883.85 STX)
+    Est. sBTC value of LP share   : ~124 sats
+    sBTC liquid reserve in v7     : (ok u250)
+
+─── LINKS ──────────────────────────────────────────────
+    Contract : https://explorer.hiro.so/address/SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX.satsflow-streams-v7?chain=mainnet
+    Pool     : https://explorer.hiro.so/address/SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1?chain=mainnet
+    Deployer : https://explorer.hiro.so/address/SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX?chain=mainnet
+    Create tx: https://explorer.hiro.so/txid/8e14ca726a70ff9c0744c3584ac60d0ad1f2f7b8131fb2eb5e76889fd95b13b5?chain=mainnet
+
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  cd /Users/samthetutor/My-Work/Proj [Keects/Hackathon/Stacks/satsflow/satsflow-contracts && node -e "[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hiimport('@stacks/transactions').then(async ({ principalCV, uintCV, cvToHex, hexTo [KCCV, cvToString, contractPrincipalCV }) => {[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h   const API = 'https://api.hiro.so';[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h   const DEPLOYER = 'SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX';[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h   const RECIPIENT = 'SP3K8BC0PPEVCV7NZ6QSRWPQ2JE9E5B6N3PA0KBR9';[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h   async function ro(addr, name, fn, args=[]) {[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h     const r = await fetch(\`\${API}/v2/contracts/call-read/\${addr}/\${name}/\${ [Kffn}\`, {[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h       method:'POST', headers:{'content-type':'application/json'},[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h       body: JSON.stringify({ sender: DEPLOYER, arguments: args.map(cvToHex) })[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h     });[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h     const j = await r.json();[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h     return j.result ? cvToString(hexToCV(j.result.replace(/^0x/,''))) : JSON.str [Kiingify(j);[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h   }[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h   const [claimable, stream, info] = await Promise.all([[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h     ro(DEPLOYER,'satsflow-streams-v7','get-claimable',[uintCV(1n), principalCV(R [KEECIPIENT)]),[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h     ro(DEPLOYER,'satsflow-streams-v7','get-stream',[uintCV(1n)]),[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h     aimport('@stacks/transactions').then(async ({ principalCV, uintCV, cvToHex,  [KhhexToCV, cvToString, ea  const API = 'https://api.hiro.so';[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h   const DEPLOYER = 'SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX';[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h   const RECIPIENT = 'er  const DEPLOYER = 'SP12EBY3HBKZ2WA u  const RECIPIENT =  [K''SP3K8BC0PPEVCV7NZ6QSRWPQ2JE9E5B6N3PA0KBR9es[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h   async function ro(addr, name, fn, args=[]) {[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h     const r = aigh    const r = await fetch(\`\${API}/v2/contraTs      method:'P [KOOST', headers:{'content-type':'application/json'},[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h       body: JSON.strion      body: JSON.stringify({ sender: DEPLOYER, arguments: [K  args.m      });[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h     const j = await r.json();[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h     return j.result ? cvToString(hexToCco    colo    return j.result ? cvToStbl  [K  }[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h   const [claimable, stream, info] = await Promise.all([[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h     ro(DEPLOYER,'satsflow-stot[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h  ng     ro(DEPLOYER,'satsflow-streams-v7','get-claimable',am    ro(DEPLOYER,'sat [Kssflow-streams-v7','get-stream',[uintCV(1n)]),[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h     aimport('@stacks/tranco    aimport('@stacks/transactions').then(async ({ pri [KnncipalCV, uFi  const DEPLOYER = 'SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX';[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h   const RECIPIENT = 'er  const DEPLOYER = 'SP12EBY3HBKZ2WA u  const RECIPI.t  co [Knnst RECIPIENT = 'er  const DEPLOY[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  printf '\x03\n'[?2004l
+
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  node scripts/check-claimable.mjs 2 [K>>&1[?2004l
+
+═══════════════════════════════════════════════════════
+  STREAM #1 — RECIPIENT CLAIMABLE CHECK
+═══════════════════════════════════════════════════════
+  Recipient       : SP3K8BC0PPEVCV7NZ6QSRWPQ2JE9E5B6N3PA0KBR9
+  Explorer        : https://explorer.hiro.so/address/SP3K8BC0PPEVCV7NZ6QSRWPQ2JE9E5B6N3PA0KBR9?chain=mainnet
+
+  Claimable now   : 1 sats  ← call withdraw-from-stream to collect
+  Total withdrawn : 0 sats (nothing claimed yet)
+
+  ── Stream progress ──
+  Deposit         : 500 sats total
+  Rate            : 1 sat/block
+  Start block     : 940343
+  Current block   : 940344
+  Blocks elapsed  : 1  (~0.2 hrs)
+  Expected accrual: 1 sats  (0.2% of stream)
+  Stream status   : ACTIVE — 499 blocks remaining
+
+  Contract : https://explorer.hiro.so/address/SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX.satsflow-streams-v7?chain=mainnet
+
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  python3 /tmp/apy_volume.py 2>&1[?2004l
+Fetching pool contract transactions...
+Pool txs failed: HTTP Error 404: Not Found
+
+Trying stacks-node RPC...
+stacks-node error: <urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1000)>
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  curl -s --max-time 10 "https://api [K..bitflow.finance/api/v1/tvl/pools" 2>&1 | head -c 2000[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  curl -sv --max-time 10 "https://ap [Kii.bitflow.finance/api/v1/pool/SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1 [K"" 2>&1 | tail -40[?2004l
+* Could not resolve host: api.bitflow.finance
+* Closing connection
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  curl -s --max-time 15 "https://bit [Kfflow.finance/api/pools" 2>&1 | head -c 1000[?2004l
+Redirecting...
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004hccurl -s --max-time 15 "https://app. [Kbbitflow.finance/api/pools" 2>&1 | head -c 1000[?2004l
+<!DOCTYPE html><html lang="en" data-sentry-component="RootLayout" data-sentry-source-file="layout.tsx"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/78662f0c41fa7a07-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/8b4c4711793ae866-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/bce275aa100dfa7b-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/ca23ccc2eabff472-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/e537be46cf4c2511-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/e651effa4f2fdac5-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/e8b0ea91406c921e-s.p.woff2" as="font" crossor[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  curl -sL --max-time 15 "https://bi [Kttflow.finance/api/pools" 2>&1 | head -c 3000[?2004l
+<!DOCTYPE html><html lang="en" class="bg-black-flow __variable_76001a __variable_c06d0e __variable_026dba __variable_d7b8c9 __variable_b4c22e __variable_490020 __variable_9a5d03 __variable_851e78 __variable_ecfe3f __variable_fd7d65 font-aeonikFono"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/063e72a92c9ec48b-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/0a86735c6520d94f-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/1cd219beaa0c0f9a-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/1e41be92c43b3255-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/3385d9f77b727ce7-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/37786be940ec402b-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/3c365cdafe49b4eb-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/3ee0ef41fb2e8628-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/4642fe567cc45cd6-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/5833a3fb70cad261-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/7036f867634c3d29-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/78662f0c41fa7a07-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/8b4c4711793ae866-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/98e207f02528a563-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/bce275aa100dfa7b-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/ca23ccc2eabff472-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/cc9a5f10ece852e7-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/d3ebbfd689654d3a-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/d536ec48f0acd73b-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/db96af6b531dc71f-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/e537be46cf4c2511-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/e651effa4f2fdac5-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/e8b0ea91406[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  node scripts/pool-apy.mjs 2>&1[?2004l
+Fetching recent swap transactions on the pool...
+Fetching contract call transactions...
+^C
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  echo "waiting..."[?2004l
+waiting...
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  curl -s --max-time 10 "https://api [K..hiro.so/extended/v1/contract/SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1 [K//transactions?limit=20" 2>&1 | python3 -c "[?2004l
+[0m[27m[24m[Jpipe dquote> [K[?2004hiimport sys, json[?2004l
+[0m[27m[24m[Jpipe dquote> [K[?2004hdd = json.load(sys.stdin)[?2004l
+[0m[27m[24m[Jpipe dquote> [K[?2004httxs = d.get('results', [])[?2004l
+[0m[27m[24m[Jpipe dquote> [K[?2004hpprint('Total txs:', d.get('total', '?'), '  Fetched:', len(txs))[?2004l
+[0m[27m[24m[Jpipe dquote> [K[?2004hffor t in txs[:5]:[?2004l
+[0m[27m[24m[Jpipe dquote> [K[?2004h     fn = t.get('contract_call',{}).get('function_name','?')[?2004l
+[0m[27m[24m[Jpipe dquote> [K[?2004h     ts = t.get('burn_block_time_iso','?')[?2004l
+[0m[27m[24m[Jpipe dquote> [K[?2004h     print(f'  {fn:30s}  {ts}')[?2004l
+[0m[27m[24m[Jpipe dquote> [K[?2004h"[?2004l
+Total txs: ?   Fetched: 0
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  curl -s --max-time 10 "https://api [K..hiro.so/extended/v1/contract/SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1 [K//transactions?limit=20" | python3 -m json.tool | head -30[?2004l
+{
+    "message": "Route GET:/extended/v1/contract/SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1/transactions?limit=20 not found",
+    "error": "Not Found",
+    "statusCode": 404
+}
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  curl -s --max-time 10 "https://api [K..hiro.so/extended/v2/smart-contracts/SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-st [Kxx-v-1-1/events?limit=5" | python3 -m json.tool | head -30[?2004l
+{
+    "message": "Route GET:/extended/v2/smart-contracts/SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1/events?limit=5 not found",
+    "error": "Not Found",
+    "statusCode": 404
+}
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004hccurl -s --max-time 10 "https://api. [Khhiro.so/extended/v1/address/SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1/t [Krransactions?limit=5&type=contract_call" | python3 -m json.tool | head -40[?2004l
+{
+    "limit": 5,
+    "offset": 0,
+    "total": 66750,
+    "results": [
+        {
+            "tx_id": "0x8e14ca726a70ff9c0744c3584ac60d0ad1f2f7b8131fb2eb5e76889fd95b13b5",
+            "nonce": 5,
+            "fee_rate": "200000",
+            "sender_address": "SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX",
+            "sponsored": false,
+            "post_condition_mode": "allow",
+            "post_conditions": [],
+            "anchor_mode": "any",
+            "block_hash": "0x4c8ecdd8d9b8841be55987022dc494dbd4cdb46952d9081d5c21f63ef0d9a744",
+            "block_height": 7112638,
+            "block_time": 1773286166,
+            "block_time_iso": "2026-03-12T03:29:26.000Z",
+            "burn_block_time": 1773286017,
+            "burn_block_height": 940343,
+            "burn_block_time_iso": "2026-03-12T03:26:57.000Z",
+            "parent_burn_block_time": 1773286017,
+            "parent_burn_block_time_iso": "2026-03-12T03:26:57.000Z",
+            "canonical": true,
+            "tx_index": 0,
+            "tx_status": "success",
+            "tx_result": {
+                "hex": "0x070100000000000000000000000000000001",
+                "repr": "(ok u1)"
+            },
+            "event_count": 14,
+            "parent_block_hash": "0xf295e66f43829f96af46b70cdc5d0a931b195925a126b1a5e3972d8771ffe805",
+            "is_unanchored": false,
+            "microblock_hash": "0x",
+            "microblock_sequence": 2147483647,
+            "microblock_canonical": true,
+            "execution_cost_read_count": 102,
+            "execution_cost_read_length": 203835,
+            "execution_cost_runtime": 877459,
+            "execution_cost_write_count": 20,
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  curl -s --max-time 20 "https://api [K..hiro.so/extended/v1/address/SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1/ [Kttransactions?limit=5&type=contract_call" | python3 -m json.tool | head -60 &[?2004l
+[1] 26059 26060 26061
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004hssleep 22 && kill %1 2>/dev/null; wa [Kiit[?2004l
+{
+    "limit": 5,
+    "offset": 0,
+    "total": 66750,
+    "results": [
+        {
+            "tx_id": "0x8e14ca726a70ff9c0744c3584ac60d0ad1f2f7b8131fb2eb5e76889fd95b13b5",
+            "nonce": 5,
+            "fee_rate": "200000",
+            "sender_address": "SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX",
+            "sponsored": false,
+            "post_condition_mode": "allow",
+            "post_conditions": [],
+            "anchor_mode": "any",
+            "block_hash": "0x4c8ecdd8d9b8841be55987022dc494dbd4cdb46952d9081d5c21f63ef0d9a744",
+            "block_height": 7112638,
+            "block_time": 1773286166,
+            "block_time_iso": "2026-03-12T03:29:26.000Z",
+            "burn_block_time": 1773286017,
+            "burn_block_height": 940343,
+            "burn_block_time_iso": "2026-03-12T03:26:57.000Z",
+            "parent_burn_block_time": 1773286017,
+            "parent_burn_block_time_iso": "2026-03-12T03:26:57.000Z",
+            "canonical": true,
+            "tx_index": 0,
+            "tx_status": "success",
+            "tx_result": {
+                "hex": "0x070100000000000000000000000000000001",
+                "repr": "(ok u1)"
+            },
+            "event_count": 14,
+            "parent_block_hash": "0xf295e66f43829f96af46b70cdc5d0a931b195925a126b1a5e3972d8771ffe805",
+            "is_unanchored": false,
+            "microblock_hash": "0x",
+            "microblock_sequence": 2147483647,
+            "microblock_canonical": true,
+            "execution_cost_read_count": 102,
+            "execution_cost_read_length": 203835,
+            "execution_cost_runtime": 877459,
+            "execution_cost_write_count": 20,
+            "execution_cost_write_length": 1153,
+            "vm_error": null,
+            "events": [],
+            "tx_type": "contract_call",
+            "contract_call": {
+                "contract_id": "SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX.satsflow-streams-v7",
+                "function_name": "create-stream-with-yield",
+                "function_signature": "(define-public (create-stream-with-yield (recipient-entries (list 10 (tuple (rate_per_second uint) (recipient principal)))) (deposit uint) (name (string-ascii 64)) (description (string-ascii 256)) (reserve-ratio-bps uint)))",
+                "function_args": [
+                    {
+                        "hex": "0x0b000000010c000000020f726174655f7065725f7365636f6e64010000000000000000000000000000000109726563697069656e740516e685b016b3b6cd9ebf35f38e5ae29392e2acd51d",
+                        "repr": "(list (tuple (rate_per_second u1) (recipient 'SP3K8BC0PPEVCV7NZ6QSRWPQ2JE9E5B6N3PA0KBR9)))",
+                        "name": "recipient-entries",
+                        "type": "(list 10 (tuple (rate_per_second uint) (recipient principal)))"
+                    },
+                    {
+                        "hex": "0x01000000000000000000000000000001f4",
+                        "repr": "u500",
+                        "name": "deposit",
+                        "type": "uint"
+[1]  + done       curl -s --max-time 20  | 
+       exit 32    python3 -m json.tool | 
+       done       head -60
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  python3 /tmp/apy_volume.py 2>&1[?2004l
+Fetching recent transactions on pool contract...
+  Fetched 50 txs (offset 0), total pool txs: 66750
+  Fetched 50 txs (offset 50), total pool txs: 66750
+  Fetched 50 txs (offset 100), total pool txs: 66750
+^CTraceback (most recent call last):
+  File "/tmp/apy_volume.py", line 37, in <module>
+    data = get(url)
+           ^^^^^^^^
+  File "/tmp/apy_volume.py", line 28, in get
+    return json.loads(r.read())
+                      ^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 495, in read
+    s = self._safe_read(self.length)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 640, in _safe_read
+    data = self.fp.read(amt)
+           ^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/ssl.py", line 1251, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/ssl.py", line 1103, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  echo done[?2004l
+done
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  curl -s --max-time 25 "https://api [K..hiro.so/extended/v1/address/SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1/ [Kttransactions?limit=50&type=contract_call" > /tmp/pool_txs.json && echo "OK $(wc -c < /tmp/pool_ [Kttxs.json) bytes" || echo FAILED[?2004l
+OK   195717 bytes
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  python3 - << 'PYEOF'[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hiimport json[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hffrom datetime import datetime, timezone[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004h[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hBBTC_USD  = 95_000.0[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hSSTX_USD  = 0.26[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hLLP_FEE   = 0.0025      # 0.25% LP portion of the 0.30% Bitflow XYK fee[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hOOUR_LP   = 6_203[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hTTOTAL_LP = 51_475_290_006[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hXX_RESERVE = 1_037_147_079   # sats sBTC (from last on-chain check)[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hYY_RESERVE = 2_849_883_846_061  # uSTX[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004h[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hwwith open('/tmp/pool_txs.json') as f:[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004h     data = json.load(f)[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004h[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004httxs = data.get('results', [])[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004httotal_pool_txs = data.get('total', '?')[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004h[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hsswap_txs = [][?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hffor tx in txs:[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004h     if tx.get('tx_status') != 'success': continue[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004h     fn = tx.get('contract_call', {}).get('function_name', '')[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004h     if 'swap' not in fn: continue[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004h     ts_iso = tx.get('burn_block_time_iso') or tx.get('block_time_iso', '')[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004h     try:    ts = datetime.fromisoformat(ts_iso.replace('Z','+00:00')).timestamp()[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004h     except: ts = 0[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004h     args = {a['name']: a.get('repr','') for a in tx.get('contract_call',{}).get('funct [Kiion_args',[])}[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004h     def parse_u(s): return int(s.lstrip('u')) if s.startswith('u') else 0[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004h     # x=sBTC, y=STX: swap-x-for-yimport json[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hffrom dat; from datet-x[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hBBTC_USD  = 95_000.0[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hSSTX_USD  = 0.26[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hLLut[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hSSTX_USD  = 0.26[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hLLPrgLP_FEE   = 0.0')OUR_LP   = 6_203[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hTTOTAL_LP = 51_475_290_006[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hXX_RESERVE = 1_037_147_079 r-TOTAL_LP = 51_4dyX_RESERVE = 1_037_147_07_tY_RESERVE = 2_8 [K449_883_846_061  # uSTX[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004h[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hwwith open('/tmp/pool_txs.jp_[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hwwith open('/tmp/pool_txs.json') as s']    data = json.load(f)[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004h[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004httxs = data.(s[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004httxs = data.get('resulxs)total_pool_txs = data.get('t -[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hsswap_txs = [][?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hffor tx in txs:[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004h     if t dafor tx in tx d    if tx.getfr    fn = tx.get('contract_call', {}).get('func [KttiY-    if 'swap' not in fn: continue[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004h     ts_iso = tx.get('burn_=t    ts_iso = tx.get('burn_block_%H    try:    ts = datetim [Kee.fromisoformat(ts_iso.replace('Z','+00:00')).timor    except: ts = 0[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004h     args = {a['name']: a.get('repr','') for a in tx.get('conttc    args = {a['nac'     [Kddef parse_u(s): return int(s.lstrip('u')) if s.startswith('u') else 0[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004h     # x=sBTC, y=STX: swap*     # x=sBTC, y=STX: swap-x-for-yimport json[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hffrom dat; from datet-x[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hBBTC_ 3from dat; from datet-x[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hBBTC_USD  = 95_000.0[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hll_BTC_USD  = 95_000.0[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hSS6 STX_USD  = 0.26[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hLLu =Lut[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hSSTX_USD  =_sST[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004haaLPrgLP_FEE   =alTOTAL_LP = 51_475_290_006[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hXX_RESERVE /X_RESERVE = 1_037_147_07 =[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hwwith open('/tmp/pool_txs.jp_[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hwwith open('/tmp/pool_txs.json') as s']    data = json.load(f)[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004h[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004httxs = data.(s[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004h══with open('/tmp/pool_txs.js[7m<ffffffff>[27mtxs = data.(s[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004httxs = data.get('resulxs)total_pool_txs = data[7m<ffffffff>[27m[7m<ffffffff>[27mxs = data.g[7m<ffffffff>[27m [K[7m<ffffffff>[27mwap_txs = [][?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hffor tx in txs:[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004h     if t dafor tx in tx -Sfor tx in txLI    if t dafoTE    ts_iso = tx.get('burn_=t    [K  ts_iso = tx.get('burn_block_%H    try:    ts = datetime.fromisoformat(ts_iso.replace('Z','[7m<fff[27m[7mf[7mffff>[27m[K[7m<[7mf[7mf[7mf[7mf[7mf[7mf[7mf[7mf[7m>[27m    args = {a['name']: a.get('repr','') for a in tx.get('conttc    args = {a['n [Kaac'    def parse_u(s): return int(s.lstrip('u')) if s.startswith('u') else n-    # x=sBTC, y=ST [KXX: swap*     # x=sBTC, y=STX: swap-x-for-yimport json[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hffrom dat; from datet-x[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hBBTC_ 3from dat; from datet-x[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hBBTC_USD  = 95_000.0[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hll_BTC_USD   from dat; from datet-x[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hBBTC_ 3from dat; from datet-x[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hBBTC_USD  = 95_000.anBTC_ 3from dat; from [7m<ffffffff>[27m[7m<ffffffff>[27mBTC_USD  = 95_000.0[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hll_BTC_U  l_BTC_USD  = 95_00}[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hSS6 STX_USD  = 0.26[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hLLc_Lu =Lut[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hSSTX_USD   oSTX_USpaaLPrgLP_FEE    X_RESERVE /X_RESERVE = 1_037_147_07 =[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hwwit~$with open('/tmp/pool_txs.jp_[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hwwith ops with open('/tmp/pool_txs.jsua[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004httxs = data.(s[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004h══with open('/tmp/pool_txs.js[7m<ffffffff>[27mtxs = data.(PY ═with openpytxs = data.get('resul [Kxxs)total_pool_txs = datartfor tx in txs:[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004h     if t dafor tx in tx -Sfor tx in txLI    if t dafoTE    )     if t daforsfrom dat;  [Kffrom datet-x[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hBBTC_ 3from dat; from datet-x[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hBBTC_USD  = 95_000.0[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hll_BTC_USD   from dat; from datet-x[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hBBTC_ 3from dat; from datet-x[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hBBTC_USD  = 95_000.anBTC_ 3from dat; from [7m<ffffffff>[27m[7m<ffffffff>[27mBTC_USD  = 95_000.0[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hll_BTC_U  l_BTC_USD  = 95_00}[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hSS6 STX_USD  = 0.26[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hLLc_Lu =Lut[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hSSTX_USD   oSTX_USpaaLPrgLP_FEE    X_RESERVE /X_RESERVE = 1_037_147_07 =[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hwwit~$with open('/tmp/pool_txs.jp_[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hwwith ops with open('/tmp/pool_txs.jsua[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004httx[7m<ffffffff>[27m[7m<ffffffff>[27mTC_ 3from dat; from [7m<ffffffff>[27m[7m<ffffffff>[27mBTC_USD  = 95_000.0[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hll_BTC_U[7m<ffffffff>[27m_BTC_USD   from dX=BTC_ 3from dat; from datet-x[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hBBTC_[7m<ffffffff>[27m[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hBBTC_USD  = 95_000.anBTC_ 3f[7m<ffffffff>[27m[7m<ffffffff>[27ml_BTC_U  l_BTC_USD  = 95_00}[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hSS6 STX_USD  = 0.26[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hLLc_Lu =Lut[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hSST[7m<ffffffff>[27m[7m<ffffffff>[27mS6 STX_USD  = 0.26[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hLLc_Lu =L[7m<ffffffff>[27mc_Lu =Lut[?2004l
+[0m[27m[24m[Jheredoc> [K[?2004hSSTX_US[7m<ffffffff>[27m[7m<ffffffff>[27mSTX_USD  [7m<ffffffff>[27mit~$with open('/tmp/p[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  printf '\x03\n'[?2004l
+
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  python3 /tmp/parse-pool-apy.py 2>& [K1[?2004l
+
+========================================================
+  BITFLOW sBTC-STX XYK POOL — APY ESTIMATE
+========================================================
+  Pool : SM1793C4R5...xyk-pool-sbtc-stx-v-1-1
+  All-time txs : 66,750
+
+  -- Reserves (on-chain) --
+  sBTC : 10.37147079    (~$     985,290)
+  STX  :     2,849,883.85  (~$     740,970)
+  TVL  :                              ~$   1,726,260
+
+  -- Volume sample (28 swaps over last 50 pool txs) --
+  Date range : 2026-03-11 16:12 UTC  to  2026-03-12 03:26 UTC
+  Span       : 0.47 days
+  Functions  : {'swap-helper-b': 11, 'swap-y-for-x': 3, 'swap-helper-a': 12, 'swap-helper-c': 1, 'swap-helper-d': 1}
+  sBTC vol   : 0.0000 sBTC (0 sats)
+  Daily vol  : ~0.0000 sBTC/day  (~$0/day)
+  Daily fees : ~$0.00
+  Annual fees: ~$0
+
+  -- APY --
+  Fee APY    : ~0.00%
+  (LP fee only, excl. impermanent loss)
+  Note: sBTC & STX are partially correlated -> IL is lower than typical AMM pairs
+
+  -- Our LP position (6,203 / 51,475,290,006 tokens) --
+  Ownership  : 0.00001205%
+  sBTC in LP : ~124 sats  (vs 250 deployed)
+  Ann. yield : ~$0.000000  (tiny test deposit)
+
+  Bitflow    : https://bitflow.finance/pools
+  Explorer   : https://explorer.hiro.so/address/SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1?chain=mainnet
+
+  [ BTC=$95,000  STX=$0.26  LP_fee=0.25% ]
+
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  python3 -c "[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hiimport json[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hwwith open('/tmp/pool_txs.json') as f:[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     data = json.load(f)[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hffor tx in data['results']:[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     fn = tx.get('contract_call',{}).get('function_name','')[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     if 'swap' in fn:[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h         args = tx.get('contract_call',{}).get('function_args',[])[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h         print('fn:', fn)[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h         for a in args:[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h             print(f'  {a[\"name\"]:20s} = {a.get(\"repr\",\"\")[:60]}')[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h         print()[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h         break[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h"" 2>&1[?2004l
+fn: swap-helper-b
+  amount               = u100000
+  min-received         = u2977760
+  provider             = none
+  xyk-tokens           = (tuple (a 'SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.token-s
+  xyk-pools            = (tuple (a 'SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-poo
+
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  python3 /tmp/parse-pool-apy.py 2>/ [Kddev/null; echo "---inspecting amounts---"; python3 -c "[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hiimport json[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hwwith open('/tmp/pool_txs.json') as f:[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     txs = json.load(f)['results'][?2004l
+[0m[27m[24m[Jdquote> [K[?2004hiitems = [][?2004l
+[0m[27m[24m[Jdquote> [K[?2004hffor tx in txs:[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     fn = tx.get('contract_call',{}).get('function_name','')[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     if 'swap' not in fn: continue[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     if tx.get('tx_status') != 'success': continue[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     args = {a['name']:a.get('repr','') for a in tx.get('contract_call',{}).get('functio [Knn_args',[])}[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     amt = args.get('amount','').lstrip('u')[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     dx  = args.get('dx','').lstrip('u')[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     ts  = tx.get('burn_block_time_iso','')[:10][?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     items.append((fn, ts, amt, dx))[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hffor i in items[:12]:[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     print(f'{i[1]}  {i[0]:20s}  amount={i[2]:>12}  dx={i[3]}')[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hpprint(f'--- {len(items)} swaps total ---')[?2004l
+[0m[27m[24m[Jdquote> [K[?2004httotal = sum(int(i[2]) for i in items if i[2].isdigit())[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hpprint(f'sum(amount) = {total:,}  ({total/1e8:.4f} sBTC if sats, {total/1e6:.2f} STX if  [KuuSTX)')[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h"" 2>&1[?2004l
+
+========================================================
+  BITFLOW sBTC-STX XYK POOL — APY ESTIMATE
+========================================================
+  Pool : SM1793C4R5...xyk-pool-sbtc-stx-v-1-1
+  All-time txs : 66,750
+
+  -- Reserves (on-chain) --
+  sBTC : 10.37147079    (~$     985,290)
+  STX  :     2,849,883.85  (~$     740,970)
+  TVL  :                              ~$   1,726,260
+
+  -- Volume sample (28 swaps over last 50 pool txs) --
+  Date range : 2026-03-11 16:12 UTC  to  2026-03-12 03:26 UTC
+  Span       : 0.47 days
+  Functions  : {'swap-helper-b': 11, 'swap-y-for-x': 3, 'swap-helper-a': 12, 'swap-helper-c': 1, 'swap-helper-d': 1}
+  sBTC vol   : 0.0000 sBTC (0 sats)
+  Daily vol  : ~0.0000 sBTC/day  (~$0/day)
+  Daily fees : ~$0.00
+  Annual fees: ~$0
+
+  -- APY --
+  Fee APY    : ~0.00%
+  (LP fee only, excl. impermanent loss)
+  Note: sBTC & STX are partially correlated -> IL is lower than typical AMM pairs
+
+  -- Our LP position (6,203 / 51,475,290,006 tokens) --
+  Ownership  : 0.00001205%
+  sBTC in LP : ~124 sats  (vs 250 deployed)
+  Ann. yield : ~$0.000000  (tiny test deposit)
+
+  Bitflow    : https://bitflow.finance/pools
+  Explorer   : https://explorer.hiro.so/address/SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1?chain=mainnet
+
+  [ BTC=$95,000  STX=$0.26  LP_fee=0.25% ]
+
+---inspecting amounts---
+2026-03-12  swap-helper-b         amount=      100000  dx=
+2026-03-12  swap-y-for-x          amount=              dx=
+2026-03-12  swap-helper-b         amount=    20000000  dx=
+2026-03-12  swap-helper-b         amount=     1000000  dx=
+2026-03-12  swap-helper-a         amount=      252080  dx=
+2026-03-12  swap-helper-a         amount=      252080  dx=
+2026-03-11  swap-helper-b         amount=    20000000  dx=
+2026-03-11  swap-helper-c         amount=   959400000  dx=
+2026-03-11  swap-helper-a         amount=         737  dx=
+2026-03-11  swap-helper-a         amount=         370  dx=
+2026-03-11  swap-helper-a         amount=        1494  dx=
+2026-03-11  swap-helper-a         amount=  2610640000  dx=
+--- 28 swaps total ---
+sum(amount) = 6,513,938,607  (65.1394 sBTC if sats, 6513.94 STX if uSTX)
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  python3 /tmp/parse-pool-apy.py 2>& [K1[?2004l
+
+========================================================
+  BITFLOW sBTC-STX XYK POOL — APY ESTIMATE
+========================================================
+  Pool : SM1793C4R5...xyk-pool-sbtc-stx-v-1-1
+  All-time txs : 66,750
+
+  -- Reserves (on-chain) --
+  sBTC : 10.37147079    (~$     985,290)
+  STX  :     2,849,883.85  (~$     740,970)
+  TVL  :                              ~$   1,726,260
+
+  -- Volume sample (28 swaps over last 50 pool txs) --
+  Date range : 2026-03-11 16:12 UTC  →  2026-03-12 03:26 UTC
+  Span       : 0.47 days
+  Functions  : {'swap-helper-b': 11, 'swap-y-for-x': 3, 'swap-helper-a': 12, 'swap-helper-c': 1, 'swap-helper-d': 1}
+  Total vol  : ~$4,992,236 USD
+  Daily vol  : ~$10,656,944/day
+  Daily fees : ~$26,642.36
+  Annual fees: ~$9,724,461
+
+  -- APY --
+  Fee APY    : ~563.33%
+  (LP fee only, excl. impermanent loss)
+  Note: sBTC & STX are partially correlated -> IL is lower than typical AMM pairs
+
+  -- Our LP position (6,203 / 51,475,290,006 tokens) --
+  Ownership  : 0.00001205%
+  sBTC in LP : ~124 sats  (vs 250 deployed)
+  Ann. yield : ~$1.171841  (tiny test deposit)
+
+  Bitflow    : https://bitflow.finance/pools
+  Explorer   : https://explorer.hiro.so/address/SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1?chain=mainnet
+
+  [ BTC=$95,000  STX=$0.26  LP_fee=0.25% ]
+
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  python3 -c "[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hiimport json[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hffrom datetime import datetime, timezone[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hBBTC_USD=95000.0; STX_USD=0.26[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hSSBTC_FNS={'swap-helper-a','swap-x-for-y'}[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hwwith open('/tmp/pool_txs.json') as f:[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     txs = json.load(f)['results'][?2004l
+[0m[27m[24m[Jdquote> [K[?2004h[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hrrows=[][?2004l
+[0m[27m[24m[Jdquote> [K[?2004hffor tx in txs:[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     if tx.get('tx_status')!='success': continue[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     fn=tx.get('contract_call',{}).get('function_name','')[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     if 'swap' not in fn: continue[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     args={a['name']:a.get('repr','') for a in tx.get('contract_call',{}).get('function_ [Kaargs',[])}[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     raw_s= (args.get('amount') or args.get('dx') or args.get('dy') or '').lstrip('u')[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     raw=int(raw_s) if raw_s.isdigit() else 0[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     if fn in SBTC_FNS: usd=raw/1e8*BTC_USD[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     else: usd=raw/1e6*STX_USD[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     rows.append((fn,raw,usd))[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     print(f'{fn:22s}  raw={raw:>14,}  usd=\${usd:>12,.2f}')[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hpprint(f'TOTAL USD: \${sum(r[2] for r in rows):,.2f}')[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h"" 2>&1[?2004l
+swap-helper-b           raw=       100,000  usd=$        0.03
+swap-y-for-x            raw=             0  usd=$        0.00
+swap-helper-b           raw=    20,000,000  usd=$        5.20
+swap-helper-b           raw=     1,000,000  usd=$        0.26
+swap-helper-a           raw=       252,080  usd=$      239.48
+swap-helper-a           raw=       252,080  usd=$      239.48
+swap-helper-b           raw=    20,000,000  usd=$        5.20
+swap-helper-c           raw=   959,400,000  usd=$      249.44
+swap-helper-a           raw=           737  usd=$        0.70
+swap-helper-a           raw=           370  usd=$        0.35
+swap-helper-a           raw=         1,494  usd=$        1.42
+swap-helper-a           raw= 2,610,640,000  usd=$2,480,108.00
+swap-helper-a           raw=       955,896  usd=$      908.10
+swap-helper-a           raw= 2,642,060,868  usd=$2,509,957.82
+swap-helper-b           raw=       100,000  usd=$        0.03
+swap-helper-b           raw=        17,966  usd=$        0.00
+swap-helper-a           raw=       357,673  usd=$      339.79
+swap-helper-a           raw=         1,063  usd=$        1.01
+swap-helper-a           raw=        17,877  usd=$       16.98
+swap-y-for-x            raw=             0  usd=$        0.00
+swap-helper-b           raw=     1,609,596  usd=$        0.42
+swap-y-for-x            raw=             0  usd=$        0.00
+swap-helper-b           raw=    40,000,000  usd=$       10.40
+swap-helper-b           raw=   200,000,000  usd=$       52.00
+swap-helper-b           raw=    10,882,965  usd=$        2.83
+swap-helper-b           raw=     5,187,942  usd=$        1.35
+swap-helper-a           raw=       100,000  usd=$       95.00
+swap-helper-d           raw=     1,000,000  usd=$        0.26
+TOTAL USD: $4,992,235.55
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  curl -s --max-time 20 "https://api [K..hiro.so/extended/v1/address/SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1/ [Kttransactions?limit=10&type=contract_call" > /tmp/pool_10.json && python3 -c "[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hiimport json,urllib.request[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hwwith open('/tmp/pool_10.json') as f:[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h     txs = json.load(f)['results'][?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h## For each swap, fetch the tx events to see actual FT transfers[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hBBTC_USD=95000; STX_USD=0.26[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hSSBTC='SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token'[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004httotal_usd=0[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hffor tx in txs[:6]:[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h     fn=tx.get('contract_call',{}).get('function_name','')[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h     if 'swap' not in fn: continue[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h     txid=tx['tx_id'].replace('0x','')[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h     url=f'https://api.hiro.so/extended/v1/tx/{txid}/events?limit=20'[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h     try:[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h         req=urllib.request.Request(url,headers={'Accept':'application/json'})[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h         with urllib.request.urlopen(req,timeout=10) as r:[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h             evs=json.loads(r.read()).get('events',[])[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h         sbtc_amt=0; stx_amt=0[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h         for ev in evs:[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h             if ev.get('event_type')=='fungible_token_asset':[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h                 a=ev.geimport json,urllib.request[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hwwith open('/tmp/pool_10.json') as f:[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h     txs = json.load(f)['results'][?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h## For each swap, fetch the tx events to see actual FT transfers[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hBBTC_USD=95000; STX_USD=0.26[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hSSBTC='SM3VDXK3WZetwith open('/tmp/pool_10.jtx    txs = json.load(f)['results'][?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h##mo# For each swap, fetch the tx ev pBTC_USD=95000; STX_USD=0.26[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hSSBTC='SM3VDXK3WZZSA84XXFKAFAF15NNZ[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h  SBTC='SM3VDXK3WZZSA84XXFKA  total_usd=0[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hffor tx in txs[:6]:[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h     fn=tx.get('contract_cal  for tx in :,    fn=tx.get('co E    if 'swap' not in [K  fn: continue[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h     txid=tx['tx_id'].r U    txid=tx['tx_id'].replace('0x[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  printf '\x03\n'[?2004l
+
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  python3 /tmp/event-apy.py 2>&1[?2004l
+Pool has 66,750 all-time txs. Analysing 28 swap txs from sample...
+  tx af1564efc0923f73... ERROR: HTTP Error 404: Not Found
+  tx 97f7f72ed95162f6... ERROR: HTTP Error 404: Not Found
+  tx de7058078b617e52... ERROR: HTTP Error 404: Not Found
+  tx 8a8a98c4b54ab19c... ERROR: HTTP Error 404: Not Found
+  tx 24a1129d396da68f... ERROR: HTTP Error 404: Not Found
+  tx 704d807a4b16c563... ERROR: HTTP Error 404: Not Found
+  tx 877fe743d2b454a3... ERROR: HTTP Error 404: Not Found
+  tx fc512bceba115620... ERROR: HTTP Error 404: Not Found
+  tx f6f2c4d6919f355e... ERROR: HTTP Error 404: Not Found
+  tx 8b428d53304179eb... ERROR: HTTP Error 404: Not Found
+  tx 9aa5e6fbe81025fc... ERROR: HTTP Error 404: Not Found
+  tx dcca7b4f1e392434... ERROR: HTTP Error 404: Not Found
+  tx 9d0946fd8c1cf09b... ERROR: HTTP Error 404: Not Found
+  tx 3aff128c595bd432... ERROR: HTTP Error 404: Not Found
+  tx 14b3335fb6b086b9... ERROR: HTTP Error 404: Not Found
+  tx 271e1e158af398f5... ERROR: HTTP Error 404: Not Found
+  tx 7c4f0d8e201b7ca1... ERROR: HTTP Error 404: Not Found
+  tx 700bc0cf5dbd2353... ERROR: HTTP Error 404: Not Found
+  tx 22b8e6472134807d... ERROR: HTTP Error 404: Not Found
+  tx 0966454694a1e792... ERROR: HTTP Error 404: Not Found
+
+========================================================
+  BITFLOW sBTC-STX XYK POOL  —  APY (from tx events)
+========================================================
+  Pool     : SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1
+  All-time : 66,750 txs
+  LP fee   : 0.25% per swap
+
+  -- Reserves --
+  sBTC  : 10.37147079 sBTC   (~$    985,290)
+  STX   :     2,849,883.85 STX  (~$    740,970)
+  TVL   :                             ~$  1,726,260
+
+  -- Volume (0 event-verified swaps, 0.47 days) --
+  Date  : 2026-03-11 16:12 UTC  to  2026-03-12 03:26 UTC
+  Total : ~$0 USD
+  Daily : ~$0 USD/day  (extrapolated from full sample)
+  Daily LP fees : ~$0.00
+  Annual        : ~$0
+
+  -- APY --
+  Fee APY : ~0.00%
+  (LP fee only; impermanent loss risk is low since sBTC/STX are correlated)
+
+  -- Our 6,203 LP tokens (0.00001205% of pool) --
+  sBTC in position  : ~124 sats  (vs 250 sats deployed)
+  Annual fee yield  : ~$0.00000  (tiny test deposit)
+
+  Note: Our 250 sat deposit is a test. At any APY, the dollar yield
+  on 250 sats (~$0.24) is sub-cent noise — what proves is the mechanism.
+
+  Bitflow  : https://bitflow.finance/pools
+  Explorer : https://explorer.hiro.so/address/SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1?chain=mainnet
+
+  [ BTC=$95,000  STX=$0.26  LP_fee=0.25% ]
+
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  curl -s --max-time 10 "https://api [K..hiro.so/extended/v1/tx/0x8e14ca726a70ff9c0744c3584ac60d0ad1f2f7b8131fb2eb5e76889fd95b13b5/even [Ktts?limit=20" | python3 -m json.tool | head -40[?2004l
+{
+    "message": "Route GET:/extended/v1/tx/0x8e14ca726a70ff9c0744c3584ac60d0ad1f2f7b8131fb2eb5e76889fd95b13b5/events?limit=20 not found",
+    "error": "Not Found",
+    "statusCode": 404
+}
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  curl -s --max-time 10 "https://api [K..hiro.so/extended/v1/tx/0x8e14ca726a70ff9c0744c3584ac60d0ad1f2f7b8131fb2eb5e76889fd95b13b5" | p [Kyython3 -m json.tool | grep -E '"event_type|fungible|stx_asset|amount|asset_id' | head -30[?2004l
+            "event_type": "fungible_token_asset",
+                "asset_id": "SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token::sbtc-token",
+                "amount": "500"
+            "event_type": "fungible_token_asset",
+                "asset_id": "SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token::sbtc-token",
+                "amount": "125"
+            "event_type": "stx_asset",
+                "amount": "343476"
+            "event_type": "smart_contract_log",
+                    "repr": "(tuple (action \"transfer\") (caller 'SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1) (data (tuple (amount u343476) (memo none) (recipient 'SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX.satsflow-streams-v7) (sender 'SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1))))"
+            "event_type": "smart_contract_log",
+                    "repr": "(tuple (action \"pool-transfer\") (data (tuple (amount u343476) (recipient 'SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX.satsflow-streams-v7) (token 'SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.token-stx-v-1-2))))"
+            "event_type": "smart_contract_log",
+            "event_type": "smart_contract_log",
+                    "repr": "(tuple (action \"swap-x-for-y\") (caller 'SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX.satsflow-streams-v7) (data (tuple (dy u343476) (min-dy u1) (pool-contract 'SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1) (pool-id u21) (pool-name \"sBTC-STX-LP\") (x-amount u125) (x-amount-fees-protocol u0) (x-amount-fees-provider u0) (x-token 'SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token) (y-token 'SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.token-stx-v-1-2))))"
+            "event_type": "fungible_token_asset",
+                "asset_id": "SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token::sbtc-token",
+                "amount": "125"
+            "event_type": "stx_asset",
+                "amount": "343476"
+            "event_type": "smart_contract_log",
+                    "repr": "(tuple (action \"transfer\") (caller 'SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX.satsflow-streams-v7) (data (tuple (amount u343476) (memo none) (recipient 'SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1) (sender 'SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX.satsflow-streams-v7))))"
+            "event_type": "smart_contract_log",
+            "event_type": "fungible_token_asset",
+                "asset_id": "SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1::pool-token",
+                "amount": "6203"
+            "event_type": "smart_contract_log",
+                    "repr": "(tuple (action \"pool-mint\") (data (tuple (address 'SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX.satsflow-streams-v7) (amount u6203))))"
+            "event_type": "smart_contract_log",
+                    "repr": "(tuple (action \"add-liquidity\") (caller 'SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX.satsflow-streams-v7) (data (tuple (dlp u6203) (min-dlp u1) (pool-contract 'SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1) (pool-id u21) (pool-name \"sBTC-STX-LP\") (x-amount u125) (x-token 'SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token) (y-amount u343476) (y-token 'SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.token-stx-v-1-2))))"
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  python3 /tmp/apy-from-logs.py 2>&1 [K[K[?2004l
+Fetching events for 15 swap txs (out of 28 in sample)...
+  swap-helper-b           x-for-y  x=36 sats → dy=3101834 uSTX  vol=$0.03
+  swap-y-for-x            y-for-x  dx=1086 → y=3000000 sats  vol=$2,850.00
+  swap-helper-b           y-for-x  dx=19957028 → y=20000000 sats  vol=$19,000.00
+  swap-helper-b           x-for-y  x=361 sats → dy=30987827 uSTX  vol=$0.34
+  swap-helper-a           x-for-y  x=689333932 sats → dy=596677249 uSTX  vol=$654,867.24
+  swap-helper-a           x-for-y  x=689668166 sats → dy=596973406 uSTX  vol=$655,184.76
+  swap-helper-b           x-for-y  x=7228 sats → dy=618298814 uSTX  vol=$6.87
+  swap-helper-c           x-for-y  x=10999 sats → dy=30104891 uSTX  vol=$10.45
+  swap-helper-a           x-for-y  x=737 sats → dy=2021500 uSTX  vol=$0.70
+  swap-helper-a           x-for-y  x=370 sats → dy=1014876 uSTX  vol=$0.35
+  swap-helper-a           x-for-y  x=1493 sats → dy=4089847 uSTX  vol=$1.42
+  swap-helper-a           y-for-x  dx=944532 → y=2608029360 sats  vol=$2,477,627.89
+  swap-helper-a           x-for-y  x=954941 sats → dy=2610495902 uSTX  vol=$907.19
+  swap-helper-a           y-for-x  dx=955896 → y=2639418808 sats  vol=$2,507,447.87
+  swap-helper-b           x-for-y  x=36 sats → dy=3110301 uSTX  vol=$0.03
+
+==========================================================
+  BITFLOW sBTC-STX XYK POOL  —  APY ESTIMATE
+==========================================================
+  Pool         : SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1
+  All-time txs : 66,750
+  LP fee       : 0.25% per swap (LP portion)
+
+  -- Reserves (on-chain) --
+  sBTC  : 10.37147079 sBTC   (~$    985,290)
+  STX   :     2,849,883.85 STX  (~$    740,970)
+  TVL   :                              ~$  1,726,260
+
+  -- Volume (15 verified swaps  ×  scale 1.9×,  0.47 days) --
+  Date range   : 2026-03-11 16:12 UTC  to  2026-03-12 03:26 UTC
+  Avg swap     : ~$421,193.68 USD
+  Daily swaps  : ~59.8
+  Daily vol    : ~$25,175,464 / day
+  Daily fees   : ~$62,938.66
+  Annual fees  : ~$22,972,611
+
+  -- APY --
+  Fee APY      : ~1330.77%
+  (LP fee only; low IL risk due to sBTC/STX correlation)
+
+  -- Our 6,203 LP tokens (0.00001205% of pool) --
+  sBTC in LP   : ~124 sats  (250 sats deployed)
+  Annual yield : ~$2.76830  (test deposit, sub-cent)
+
+  Bitflow   : https://bitflow.finance/pools
+  Explorer  : https://explorer.hiro.so/address/SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1?chain=mainnet
+
+  [ BTC=$95,000  STX=$0.26  LP_fee=0.25% ]
+
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  python3 -c "[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hiimport json, re[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hwwith open('/tmp/pool_txs.json') as f:[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     txs = json.load(f)['results'][?2004l
+[0m[27m[24m[Jdquote> [K[?2004h[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h## Real volumes extracted from the log run above (x-amount in sats sBTC, dy in uSTX)[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hBBTC = 95000; STX = 0.26[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hsswap_vols = [[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     0.03, 0.78, 19000, 0.34,[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     654867.24, 655184.76,[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     6.87, 10.45, 0.70, 0.35, 1.42,[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     897.45, 907.19,[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     2507447.87,[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     0.03[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h][?2004l
+[0m[27m[24m[Jdquote> [K[?2004hnn = 15; span_days = 0.47[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hiimport statistics[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hmmed = statistics.median(swap_vols)[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hmmean_ex = sum(v for v in swap_vols if v < 100000) / sum(1 for v in swap_vols if v < 100 [K0000)[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hpprint('All swap vols (USD):', [round(v,2) for v in swap_vols])[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hpprint(f'Median swap: \${med:,.2f}')[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hpprint(f'Mean excl whale (>100k): \${mean_ex:,.2f}')[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h## extrapolate to 28 swap samples, 0.47 days, then annual[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hsswaps_per_day = 28 / span_days  # ~59.6/day[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h## Conservative: exclude the 2 whale txs >$100k[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hnno_whale = [v for v in swap_vols if v < 100_000][?2004l
+[0m[27m[24m[Jdquote> [K[?2004hddaily_vol_conserv = sum(no_whale)/len(no_whale) * swaps_per_day[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h## With whale: all volumes[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hddaily_vol_all = sum(swap_vols)/n * swaps_per_day import json,r with open('/tmol    txs  [K== json.load(f)['results'][?2004l
+[0m[27m[24m[Jdquote> [K[?2004h[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h##es[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h## Real volumes extracted from t   BTC = 95000; STX = 0.26[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hsswap_vols = [[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     0.03, 0.78, 19000, 0.34,[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     654867.24,il[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hsswap_vols = [[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     0.0       0.03, 0.26    654867.24, 655184.76,[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h   1    6.87, 10.45, 0.70, 0:'    897.45, 907.19,[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h     2507447.8ai    2507447.87,[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h         0.03[?2004l
+[0m[27m[24m[Jdquote> [K[?2004h][?2004l
+[0m[27m[24m[Jdquote> [K[?2004hnn =nu][?2004l
+[0m[27m[24m[Jdquote> [K[?2004hnn = 1= \$[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hiimport statistics[?2004l
+[0m[27m[24m[Jdquote> [K[?2004hmmed  prmed = statistics  mean_ex = sum(v for v in[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  curl -s --max-time 15 "https://api [K..hiro.so/extended/v1/tx/0x8e14ca726a70ff9c0744c3584ac60d0ad1f2f7b8131fb2eb5e76889fd95b13b5" > / [Kttmp/our_tx.json && python3 -c "[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hiimport json[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hwwith open('/tmp/our_tx.json') as f:[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h     tx = json.load(f)[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hpprint('=== TRANSACTION ===')[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hpprint(f'  TX ID     : {tx[\"tx_id\"]}')[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hpprint(f'  Status    : {tx[\"tx_status\"]}')[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hpprint(f'  Block     : {tx[\"block_height\"]} (burn block {tx[\"burn_block_height [K\\"]})')[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hpprint(f'  Time      : {tx[\"burn_block_time_iso\"]}')[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hpprint(f'  Sender    : {tx[\"sender_address\"]}')[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hpprint(f'  Fee       : {int(tx[\"fee_rate\"]):,} uSTX ({int(tx[\"fee_rate\"])/1e6 [K::.4f} STX)')[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hccc = tx.get('contract_call',{})[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hpprint(f'  Contract  : {cc.get(\"contract_id\")}')[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hpprint(f'  Function  : {cc.get(\"function_name\")}')[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hpprint()[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hpprint('=== ARGUMENTS ===')[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hffor a in cc.get('function_args',[]):[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h     print(f'  {a[\"name\"]:25s} = {a[\"repr\"][:80]}')[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hpprint()[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hpprint('=== KEY EVENTS ===')[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hffor ev in tx.get('events',[]):[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h     et = ev.get('event_type','')[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h     if et == 'fungible_token_asseimport json[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hwwith open('/tmp/our_tx.json') as f:[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h     tx = json.load(f)[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hpprint('=== TRANSACTION ===')[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hpprint(f'  TX ID     : {tx[\"tx_id\"]}')[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hpprint(f'  Status      with open(et    tx = json.load(f)[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004h[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hpprint('=== \"[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hpprint('=== TRANSACT0]}print(f'  TX ID     : {tx[\t'print(f'  Status    : {tx[\"t [Kxx_status\  print(f'  Block     : {tx[\"block_height\")}print(f'  Time      : {tx[\"burn_block_t [Kiime_iso\"]}')[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hpprint(f'  Sender    : {tx[\"send('print(f'  Sender    : {tx[\"sender_address\"]} [K'')[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hpprik print(f'  Fee       : {int(tx[\"fee_rate\"]):,}):cc = tx.get('contract_call [K'',{})[?2004l
+[0m[27m[24m[Jcmdand dquote> [K[?2004hpprint(f'  Contract  : {c[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  curl -s --max-time 20 "https://api [K..hiro.so/extended/v1/tx/0x8e14ca726a70ff9c0744c3584ac60d0ad1f2f7b8131fb2eb5e76889fd95b13b5" > / [Kttmp/our_tx.json && echo "fetched $(wc -c < /tmp/our_tx.json) bytes"[?2004l
+fetched    12421 bytes
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  python3 /tmp/show_tx.py[?2004l
+=== TRANSACTION ===
+  TX ID    : 0x8e14ca726a70ff9c0744c3584ac60d0ad1f2f7b8131fb2eb5e76889fd95b13b5
+  Status   : success
+  Block    : 7112638 (burn block 940343)
+  Time     : 2026-03-12T03:26:57.000Z
+  Sender   : SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX
+  Fee      : 200,000 uSTX (0.2000 STX)
+  Contract : SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX.satsflow-streams-v7
+  Function : create-stream-with-yield
+
+=== ARGUMENTS ===
+  recipient-entries          = (list (tuple (rate_per_second u1) (recipient 'SP3K8BC0PPEVCV7NZ6QSRWPQ2JE9E5B6N3
+  deposit                    = u500
+  name                       = "yield-smoke-v7"
+  description                = "v7 yield test - 500 sats sBTC-STX LP"
+  reserve-ratio-bps          = u5000
+
+=== EVENTS ===
+  FT transfer             500 sbtc-token         ...VEJCN0BNXSTPJZWYCCNX -> ....satsflow-streams-v7
+  FT transfer             125 sbtc-token         ....satsflow-streams-v7 -> ...-pool-sbtc-stx-v-1-1
+  STX transfer         343,476 uSTX  (0.343476 STX)
+  Log      : (tuple (action "transfer") (caller 'SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1) (data (tuple (amo
+  Log      : (tuple (action "pool-transfer") (data (tuple (amount u343476) (recipient 'SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX.sats
+  Log      : (tuple (action "update-pool-balances") (data (tuple (x-balance u1037146954) (y-balance u2849883502585))))
+  Log      : (tuple (action "swap-x-for-y") (caller 'SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX.satsflow-streams-v7) (data (tuple (dy 
+  FT transfer             125 sbtc-token         ....satsflow-streams-v7 -> ...-pool-sbtc-stx-v-1-1
+  STX transfer         343,476 uSTX  (0.343476 STX)
+  Log      : (tuple (action "transfer") (caller 'SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX.satsflow-streams-v7) (data (tuple (amount 
+  Log      : (tuple (action "update-pool-balances") (data (tuple (x-balance u1037147079) (y-balance u2849883846061))))
+  FT mint              6,203 pool-token         ... -> ....satsflow-streams-v7
+  Log      : (tuple (action "pool-mint") (data (tuple (address 'SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX.satsflow-streams-v7) (amoun
+  Log      : (tuple (action "add-liquidity") (caller 'SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX.satsflow-streams-v7) (data (tuple (dl
+
+Explorer: https://explorer.hiro.so/txid/0x8e14ca726a70ff9c0744c3584ac60d0ad1f2f7b8131fb2eb5e76889fd95b13b5?chain=mainnet
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  cat /Users/samthetutor/My-Work/Pro [Kjjects/Hackathon/Stacks/satsflow/satsflow-app/.env.local[?2004l
+NEXT_PUBLIC_STACKS_NETWORK=testnet
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  which vercel && vercel --version[?2004l
+/Users/samthetutor/.nvm/versions/node/v22.12.0/bin/vercel
+[90mVercel CLI 49.1.2[39m
+49.1.2
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-contracts % [K[?2004h  cd /Users/samthetutor/My-Work/Proj [Keects/Hackathon/Stacks/satsflow/satsflow-app && pnpm build 2>&1 | tail -30[?2004l
+^C cd /Users/samthetutor/My-Work/Projects/Hackathon/Stacks/satsflow/satsflow-app && pnpm build 2>&1 | tail -30
+
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-app % [K[?2004h  cd /Users/samthetutor/My-Work/Projects/H [Kaackathon/Stacks/satsflow/satsflow-app && pnpm build 2>&1 | tail -30[?2004l
+^C pnpm build 2>&1
+
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-app % [K[?2004h  pnpm build 2>&1[?2004l
+
+> satsflow-app@0.1.0 build /Users/samthetutor/My-Work/Projects/Hackathon/Stacks/satsflow/satsflow-app
+> next build --webpack
+
+[1m[38;2;173;127;168m▲ Next.js 16.1.6[39m[22m (webpack)
+- Environments: .env.local
+
+[37m[1m [22m[39m Creating an optimized production build ...
+^C[41m[30m ELIFECYCLE [39m[49m [31mCommand failed with exit code 130.[39m
+ echo "waiting..."
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-app % [K[?2004h  echo "waiting..."[?2004l
+waiting...
+[1m[7m%[27m[1m[0m                                                                                               [0m[27m[24m[Jsamthetutor@Sam-the-tutors-MacBook-Pro satsflow-app % [K[?2004h

@@ -290,6 +290,110 @@ Prepare final hackathon-ready package and reduce demo risk.
 
 ---
 
+---
+
+## Phase 8 - Bitflow Yield Integration (v6 Contract)
+Status: In Progress (contract written, Clarinet check passing)
+
+### Objective
+Extend SatsFlow with an optional Bitflow XYK yield strategy for sBTC streams.
+Sender can optionally deploy a portion of the stream deposit to the Bitflow sBTC-BDC pool and earn LP fees that extend the life of the stream.
+
+### Design Decisions
+- **Yield is sBTC-only.** STX streams use the original v5 logic.
+- **Sender-side only.** Recipients interact identically to v5 — they just call `withdraw`.
+- **Two-path withdraw:**
+  - Path A: liquid reserve >= claimable --> pay directly.
+  - Path B: reserve short AND yield enabled --> try inline Bitflow unwind via `match` (fail-soft):
+    - Success: unwind LP, pay full claimable.
+    - Failure: pay reserve remainder, set strategy to PAUSED.
+- **`yield_enabled=false` is identical to v5.** Full backward compatibility.
+- **Mainnet-only yielding.** Bitflow XYK contracts are mainnet; yield functions fail on testnet/devnet.
+
+### Confirmed Contract Addresses (Mainnet)
+- Bitflow XYK Core: `SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-core-v-1-2`
+- sBTC-BDC Pool: `SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-bdc-v-1-1`
+- BDC Token: `SP14NS8MVBRHXMM96BQY0727AJ59SWPV7RMHC0NCG.pontis-bridge-BDC`
+  (verified via Hiro API pool query + manual c32 decode of on-chain principal bytes)
+- sBTC Token: `SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token`
+
+### XYK Core Function Signatures (verified from on-chain source)
+- `swap-x-for-y (pool <xyk-pool-trait>) (x-token <sip-010-trait>) (y-token <sip-010-trait>) (x-amount uint) (min-dy uint)` -> `(ok dy)` [min-dy must be > 0]
+- `swap-y-for-x (pool <xyk-pool-trait>) (x-token <sip-010-trait>) (y-token <sip-010-trait>) (y-amount uint) (min-dx uint)` -> `(ok dx)` [min-dx must be > 0]
+- `add-liquidity (pool <xyk-pool-trait>) (x-token <sip-010-trait>) (y-token <sip-010-trait>) (x-amount uint) (min-dlp uint)` -> `(ok dlp)` [min-dlp must be > 0; XYK auto-computes y-amount]
+- `withdraw-liquidity (pool <xyk-pool-trait>) (x-token <sip-010-trait>) (y-token <sip-010-trait>) (amount uint) (min-x-amount uint) (min-y-amount uint)` -> `(ok { x-amount: uint, y-amount: uint })`
+
+### v6 New/Modified Functions
+**Public:**
+- `create-stream-with-yield(recipient-entries, deposit, name, description, reserve-ratio-bps)` -- creates yield stream and immediately deploys LP
+- `withdraw` -- two-path (Path A / Path B with fail-soft match)
+- `cancel-stream` -- unwinds LP if active (fail-soft), then distributes + refunds
+- `pause-yield-strategy(stream-id)` -- sets PAUSED without unwind
+- `unwind-yield-strategy(stream-id)` -- fully unwinds LP -> liquid reserve
+
+**Read-only:**
+- `get-yield-info(stream-id)` -- returns all yield fields + computed liquid_reserve
+
+**Private:**
+- `compute-liquid-reserve(stream)` -- deposit + total_yield_harvested - total_withdrawn - deployed_principal
+- `bitflow-deploy(deploy-amount)` -- swap half->BDC, add-liquidity with other half; returns LP minted
+- `bitflow-unwind(lp-balance, deployed-principal)` -- withdraw-liquidity + swap BDC->sBTC; returns { sbtc-received, yield-gained }
+
+### Strategy Status Model
+- `STRATEGY_INACTIVE (u0)` -- no LP, yield_enabled may be true
+- `STRATEGY_ACTIVE (u1)` -- LP live in Bitflow
+- `STRATEGY_PAUSED (u2)` -- LP in Bitflow but suspended (e.g. after failed unwind); pay from liquid only
+- `STRATEGY_UNWOUND (u3)` -- LP fully returned; stream pays from liquid reserve only
+
+### Deploy Sequence (bitflow-deploy)
+1. `swap-x-for-y` half of deploy-amount sBTC -> BDC (pool auto-calculates)
+2. `add-liquidity` with remaining half sBTC (XYK auto-pulls proportionate BDC)
+3. Residual BDC stays in contract; swapped back on unwind
+Note: as-contract is used so tx-sender = current-contract for all Bitflow calls
+
+### Unwind Sequence (bitflow-unwind)
+1. `withdraw-liquidity` all LP tokens -> sBTC + BDC
+2. `swap-y-for-x` all BDC -> sBTC
+3. Total sBTC = from-LP + from-swap; yield-gained = max(0, total - deployed_principal)
+
+### v6 Extended streams Map Fields
+| Field | Type | Description |
+|---|---|---|
+| yield_enabled | bool | Whether yield strategy is enabled |
+| reserve_ratio_bps | uint | BPS of deposit kept as liquid (>= 3000) |
+| deployed_principal | uint | sBTC deployed to LP (updated on deploy/unwind) |
+| lp_token_balance | uint | LP tokens held by this contract |
+| total_yield_harvested | uint | Cumulative sBTC gain from unwinds |
+| last_harvest_timestamp | uint | Block height of last LP unwind |
+| strategy_status | uint | INACTIVE / ACTIVE / PAUSED / UNWOUND |
+
+### Clarinet.toml Requirements Added
+- `SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.sip-010-trait-ft-standard-v-1-1`
+- `SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-trait-v-1-2`
+- `SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-core-v-1-2`
+- `SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-bdc-v-1-1`
+- `SP14NS8MVBRHXMM96BQY0727AJ59SWPV7RMHC0NCG.pontis-bridge-BDC`
+
+### Deliverables
+- `satsflow-streams-v6.clar` -- written and `clarinet check` passing (no errors, warnings only)
+- Updated `Clarinet.toml` with Bitflow requirements and v6 contract registration
+- Updated `bitflow-integration-plan.md` with confirmed addresses and design
+
+### Exit Criteria
+- `clarinet check` passes for v6 contract
+- yield_enabled=false path is testable on simnet/testnet (identical to v5)
+- yield_enabled=true path is deployable on mainnet with Bitflow XYK live
+- Updated test cases cover both yield paths (Path A, Path B success, Path B fail-soft)
+
+### Phase 8 Progress Notes
+- BDC token address confirmed: `SP14NS8MVBRHXMM96BQY0727AJ59SWPV7RMHC0NCG.pontis-bridge-BDC`
+  (decoded from raw pool data hex using c32 algorithm verified against known sbtc-token address)
+- XYK core function signatures verified by fetching on-chain Clarity source
+- `satsflow-streams-v6.clar` written and passing `clarinet check` with zero errors
+- Remaining: test suite additions, frontend integration for yield UI, mainnet deployment
+
+---
+
 ## Cross-Phase Standards
 - Keep scope to MVP (single sender -> multi-recipient streams with per-recipient rates).
 - Prefer explicit errors over silent failures.
@@ -300,8 +404,8 @@ Prepare final hackathon-ready package and reduce demo risk.
 ---
 
 ## Immediate Next Step
-Run a focused **Phase 4/5 closeout** pass:
-1. Execute end-to-end multi-wallet test matrix (`create -> receive view -> withdraw -> sender top-up -> cancel`) and capture tx links.
-2. Add final UX hardening for loading/error/empty states on all dashboards and detail pages.
-3. Validate post-condition behavior for create/top-up/withdraw/cancel on target wallets and document the final policy.
-4. Update demo script + proof pack with v5 contract id, screenshots, and known constraints.
+Phase 8 continuation + Phase 4/5 closeout:
+1. Add test cases for v6: yield-disabled path (identical to v5), yield-enabled creation, two-path withdraw, cancel with/without LP, pause/unwind strategy functions.
+2. Frontend: add `create-stream-with-yield` UI, yield info display in sender dashboard, and strategy management buttons (pause/unwind).
+3. Phase 4/5 closeout: end-to-end multi-wallet test matrix, UX hardening (loading/error/empty states), post-condition validation.
+4. Phase 7: demo script + proof pack update with v5/v6 contract IDs.

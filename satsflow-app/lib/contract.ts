@@ -1,13 +1,19 @@
 // SatsFlow contract configuration
-// Deployed: ST2QFJV445B22TXQXYW0M3EDEYSDGDVV5N15PE2XN.satsflow-streams-v5
+// Deployed: SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX.satsflow-streams-v7 (mainnet)
 
-export const CONTRACT_ADDRESS = "ST2QFJV445B22TXQXYW0M3EDEYSDGDVV5N15PE2XN";
-export const CONTRACT_NAME = "satsflow-streams-v5";
+export const CONTRACT_ADDRESS = "SP12EBY3HBKZ2WAKKSZJNVEJCN0BNXSTPJZWYCCNX";
+export const CONTRACT_NAME = "satsflow-streams-v7";
 export const CONTRACT_ID = `${CONTRACT_ADDRESS}.${CONTRACT_NAME}`;
 
 export const SBTC_TOKEN =
   "SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token";
 export const STX_TOKEN = "SP000000000000000000002Q6VF78";
+
+// Bitflow sBTC-STX XYK pool (yield strategy)
+export const BITFLOW_POOL_ID =
+  "SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1";
+export const BITFLOW_LP_TOKEN =
+  "SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1";
 
 // SIP-010 FT post-condition metadata for sBTC
 export const SBTC_ASSET_CONTRACT_ID = SBTC_TOKEN;

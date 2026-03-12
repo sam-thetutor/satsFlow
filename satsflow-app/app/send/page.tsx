@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useWallet } from "@/lib/wallet";
-import { useCreateStream } from "@/lib/hooks/useTransactions";
+import { useCreateStream, useCreateStreamWithYield } from "@/lib/hooks/useTransactions";
 import { SUPPORTED_TOKENS, TokenKey } from "@/lib/contract";
 
 interface RecipientEntry {
@@ -14,6 +14,7 @@ interface RecipientEntry {
 export default function SendPage() {
   const { connected, address, connect } = useWallet();
   const createStream = useCreateStream();
+  const createStreamWithYield = useCreateStreamWithYield();
 
   const [entries, setEntries]         = useState<RecipientEntry[]>([{ address: "", rate: "" }]);
   const [token, setToken]             = useState<TokenKey>("sBTC");
@@ -22,6 +23,12 @@ export default function SendPage() {
   const [description, setDescription] = useState("");
   const [txId, setTxId]               = useState<string | null>(null);
   const [error, setError]             = useState<string | null>(null);
+  const [enableYield, setEnableYield] = useState(false);
+  // reserveRatioPct: % kept as liquid reserve (default 50%). LP allocation = 100 - reserveRatioPct.
+  const [reserveRatioPct, setReserveRatioPct] = useState(50);
+
+  // Yield requires sBTC
+  useEffect(() => { if (enableYield) setToken("sBTC"); }, [enableYield]);
 
   const micro = token === "STX" ? 1_000_000 : 100_000_000;
 
@@ -106,15 +113,27 @@ export default function SendPage() {
       return;
     }
 
-    createStream(
-      trimmed.map((e, i) => ({ recipient: e.address, rate: rateMicros[i] })),
-      token,
-      depositMicro,
-      name,
-      description,
-      (id) => setTxId(id),
-      () => setError("Transaction cancelled.")
-    );
+    if (enableYield && token === "sBTC") {
+      createStreamWithYield(
+        trimmed.map((e, i) => ({ recipient: e.address, rate: rateMicros[i] })),
+        depositMicro,
+        name,
+        description,
+        reserveRatioPct * 100, // convert % to bps
+        (id) => setTxId(id),
+        () => setError("Transaction cancelled.")
+      );
+    } else {
+      createStream(
+        trimmed.map((e, i) => ({ recipient: e.address, rate: rateMicros[i] })),
+        token,
+        depositMicro,
+        name,
+        description,
+        (id) => setTxId(id),
+        () => setError("Transaction cancelled.")
+      );
+    }
   }
 
   return (
@@ -122,7 +141,7 @@ export default function SendPage() {
       <h1 className="text-2xl font-bold mb-6">Create Payment Stream</h1>
 
       {txId ? (
-        <SuccessScreen txId={txId} token={token} name={name} recipientCount={entries.length} deposit={deposit} onReset={() => { setTxId(null); setName(""); setDescription(""); setDeposit(""); setEntries([{ address: "", rate: "" }]); }} />
+        <SuccessScreen txId={txId} token={token} name={name} recipientCount={entries.length} deposit={deposit} enableYield={enableYield} onReset={() => { setTxId(null); setName(""); setDescription(""); setDeposit(""); setEntries([{ address: "", rate: "" }]); setEnableYield(false); }} />
       ) : (
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
 
@@ -143,6 +162,74 @@ export default function SendPage() {
               </span>
             )}
           </label>
+
+          {/* Yield farming toggle */}
+          {token === "sBTC" && (
+            <button
+              type="button"
+              onClick={() => setEnableYield((v) => !v)}
+              className={`flex items-center gap-3 text-left rounded-xl border p-4 transition-colors ${
+                enableYield
+                  ? "border-orange-700/60 bg-orange-900/15"
+                  : "border-neutral-800 bg-neutral-900 hover:border-neutral-700"
+              }`}
+            >
+              <div className={`relative shrink-0 w-10 h-5 rounded-full transition-colors ${enableYield ? "bg-orange-500" : "bg-neutral-700"}`}>
+                <span className={`absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white shadow transition-transform ${enableYield ? "translate-x-5" : ""}`} />
+              </div>
+              <div className="flex flex-col gap-0.5">
+                <span className="text-sm font-medium">Enable yield farming</span>
+                <span className="text-xs text-neutral-500">Deposit earns Bitflow LP fees while streaming — your sBTC works while it streams</span>
+              </div>
+            </button>
+          )}
+
+          {/* Yield config panel */}
+          {enableYield && token === "sBTC" && (
+            <div className="flex flex-col gap-3 rounded-xl border border-orange-800/40 bg-orange-900/10 p-4 text-sm">
+              <div className="flex items-center justify-between">
+                <span className="font-semibold text-orange-300 text-xs uppercase tracking-wide">Bitflow sBTC-STX Pool</span>
+                <span className="text-xs text-neutral-500">~5–15% LP APY</span>
+              </div>
+              <label className="flex flex-col gap-2">
+                <div className="flex justify-between text-xs">
+                  <span className="text-neutral-400">LP allocation</span>
+                  <span className="font-mono text-orange-300">
+                    {100 - reserveRatioPct}% to LP · {reserveRatioPct}% liquid reserve
+                  </span>
+                </div>
+                <input
+                  type="range"
+                  min={10}
+                  max={90}
+                  step={5}
+                  value={100 - reserveRatioPct}
+                  onChange={(e) => setReserveRatioPct(100 - parseInt(e.target.value))}
+                  className="w-full accent-orange-500"
+                />
+                <div className="flex justify-between text-xs text-neutral-600">
+                  <span>10% to LP</span>
+                  <span>90% to LP</span>
+                </div>
+              </label>
+              {depositMicro > 0n && (
+                <div className="grid grid-cols-2 gap-2 text-xs">
+                  <div className="rounded-lg bg-neutral-800/60 px-3 py-2">
+                    <div className="text-neutral-500 mb-0.5">Deployed to Bitflow</div>
+                    <div className="font-mono text-orange-300">
+                      {((Number(depositMicro) / 1e8) * (100 - reserveRatioPct) / 100).toFixed(8)} sBTC
+                    </div>
+                  </div>
+                  <div className="rounded-lg bg-neutral-800/60 px-3 py-2">
+                    <div className="text-neutral-500 mb-0.5">Liquid reserve</div>
+                    <div className="font-mono text-neutral-300">
+                      {((Number(depositMicro) / 1e8) * reserveRatioPct / 100).toFixed(8)} sBTC
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
 
           <label className="flex flex-col gap-1 text-sm">
             Stream name
@@ -258,6 +345,7 @@ function SuccessScreen({
   name,
   recipientCount,
   deposit,
+  enableYield,
   onReset,
 }: {
   txId: string;
@@ -265,6 +353,7 @@ function SuccessScreen({
   name: string;
   recipientCount: number;
   deposit: string;
+  enableYield: boolean;
   onReset: () => void;
 }) {
   const [copied, setCopied] = useState(false);
@@ -283,7 +372,7 @@ function SuccessScreen({
           <span className="text-2xl">✅</span>
           <div>
             <p className="text-green-400 font-semibold text-lg">Stream submitted!</p>
-            <p className="text-neutral-400 text-sm">Transaction broadcast to Stacks testnet</p>
+            <p className="text-neutral-400 text-sm">Transaction broadcast to Stacks mainnet</p>
           </div>
         </div>
 
@@ -292,6 +381,7 @@ function SuccessScreen({
           <div className="flex justify-between"><span className="text-neutral-500">Token</span><span className="text-neutral-200">{token}</span></div>
           <div className="flex justify-between"><span className="text-neutral-500">Deposit</span><span className="text-neutral-200">{deposit} {token}</span></div>
           <div className="flex justify-between"><span className="text-neutral-500">Recipients</span><span className="text-neutral-200">{recipientCount}</span></div>
+          {enableYield && <div className="flex justify-between"><span className="text-neutral-500">Yield</span><span className="text-orange-400 font-medium">Bitflow LP ✦</span></div>}
         </div>
 
         <div className="flex flex-col gap-2 text-sm">
@@ -306,7 +396,7 @@ function SuccessScreen({
             </button>
           </div>
           <a
-            href={`https://explorer.hiro.so/txid/${txId}?chain=testnet`}
+            href={`https://explorer.hiro.so/txid/${txId}?chain=mainnet`}
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-orange-400 underline"
@@ -319,7 +409,7 @@ function SuccessScreen({
       <div className="rounded-xl border border-neutral-800 bg-neutral-900 p-5 text-sm flex flex-col gap-3">
         <p className="font-semibold">What&apos;s next?</p>
         <p className="text-neutral-400 text-sm">
-          Once the transaction confirms (usually under 1 minute on testnet), your stream will
+          Once the transaction confirms (next Stacks block), your stream will
           appear in <strong className="text-neutral-200">My Streams</strong>. From there,
           copy the recipient link and share it with each payee.
         </p>

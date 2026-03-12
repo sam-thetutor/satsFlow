@@ -37,7 +37,7 @@ function StatsBanner({ ids, address }: { ids: number[]; address: string }) {
     <div className="grid grid-cols-3 gap-3 mb-6">
       <StatCard label="Total streams" value={total.toString()} />
       <StatCard label="Status" value={total === 0 ? "—" : "Loading…"} sub="active count" />
-      <StatCard label="Network" value="Testnet" />
+      <StatCard label="Network" value="Mainnet" />
     </div>
   );
 }

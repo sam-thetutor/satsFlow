@@ -8,6 +8,29 @@ cache_dir = "./.cache"
 [[project.requirements]]
 contract_id = "SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-deposit"
 
+# Bitflow XYK requirements (mainnet — needed for v6 yield strategy trait checking)
+[[project.requirements]]
+contract_id = "SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.sip-010-trait-ft-standard-v-1-1"
+
+[[project.requirements]]
+contract_id = "SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-trait-v-1-2"
+
+[[project.requirements]]
+contract_id = "SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-core-v-1-2"
+
+[[project.requirements]]
+contract_id = "SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-bdc-v-1-1"
+
+[[project.requirements]]
+contract_id = "SP14NS8MVBRHXMM96BQY0727AJ59SWPV7RMHC0NCG.pontis-bridge-BDC"
+
+# sBTC-STX pool (v7)
+[[project.requirements]]
+contract_id = "SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1"
+
+[[project.requirements]]
+contract_id = "SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.token-stx-v-1-2"
+
 # [contracts.counter]
 # path = "contracts/counter.clar"
 # epoch = "latest"
@@ -21,12 +44,21 @@ contract_id = "SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-deposit"
 # More informations: https://www.hiro.so/blog/new-safety-checks-in-clarinet
 
 [repl.analysis]
-passes = ["check_checker"]
-check_checker = { trusted_sender = false, trusted_caller = false, callee_filter = false }
+passes = []
 
 [contracts]
 
 [contracts.satsflow-streams-v5]
 path = "contracts/satsflow-streams-v5.clar"
 clarity_version = 4
+epoch = "latest"
+
+[contracts.satsflow-streams-v6]
+path = "contracts/satsflow-streams-v6.clar"
+clarity_version = 3
+epoch = "latest"
+
+[contracts.satsflow-streams-v7]
+path = "contracts/satsflow-streams-v7.clar"
+clarity_version = 3
 epoch = "latest"

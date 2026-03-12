@@ -2,7 +2,7 @@
 
 import { use, useState } from "react";
 import { useWallet } from "@/lib/wallet";
-import { useStream, useStreamRecipients, useRecipientStates, useBnsName } from "@/lib/hooks/useStreams";
+import { useStream, useStreamRecipients, useRecipientStates, useBnsName, useYieldInfo } from "@/lib/hooks/useStreams";
 import { useTopUpStream, useCancelStream } from "@/lib/hooks/useTransactions";
 import { formatTokenAmount, tokenKeyFromPrincipal, TokenKey } from "@/lib/contract";
 import { Stream } from "@/lib/types";
@@ -70,6 +70,7 @@ export default function SenderStreamDetail({ params }: { params: Promise<{ id: s
   const { stream, loading, error, refetch } = useStream(streamId, address);
   const recipients = useStreamRecipients(streamId, address);
   const recipientStates = useRecipientStates(streamId, address, recipients);
+  const { yieldInfo } = useYieldInfo(streamId, address);
   const topUp  = useTopUpStream();
   const cancel = useCancelStream();
 
@@ -156,6 +157,30 @@ export default function SenderStreamDetail({ params }: { params: Promise<{ id: s
           ))}
         </div>
       </div>
+
+      {/* Yield info */}
+      {yieldInfo?.yield_enabled && (
+        <div className="rounded-xl border border-orange-800/40 bg-orange-900/10 p-5 flex flex-col gap-3 text-sm">
+          <div className="flex items-center justify-between">
+            <p className="font-semibold text-orange-300">Yield Strategy</p>
+            <span className={`text-xs px-2.5 py-0.5 rounded-full font-medium ${
+              yieldInfo.strategy_status === 1n
+                ? "bg-green-900 text-green-300"
+                : "bg-neutral-800 text-neutral-400"
+            }`}>
+              {yieldInfo.strategy_status === 1n ? "Active" : "Inactive"}
+            </span>
+          </div>
+          <Row label="Pool"           value="Bitflow sBTC-STX" />
+          <Row label="LP tokens"      value={yieldInfo.lp_token_balance.toString()} />
+          <Row label="Deployed"       value={`${(Number(yieldInfo.deployed_principal) / 1e8).toFixed(8)} sBTC`} />
+          <Row label="Liquid reserve" value={`${(Number(yieldInfo.liquid_reserve) / 1e8).toFixed(8)} sBTC`} />
+          <Row label="Reserve ratio"  value={`${Number(yieldInfo.reserve_ratio_bps) / 100}% liquid`} />
+          {yieldInfo.total_yield_harvested > 0n && (
+            <Row label="Yield harvested" value={`${(Number(yieldInfo.total_yield_harvested) / 1e8).toFixed(8)} sBTC`} highlight="green" />
+          )}
+        </div>
+      )}
 
       {/* Share link */}
       <div className="rounded-xl border border-neutral-800 bg-neutral-900 p-5 flex flex-col gap-3 text-sm">
